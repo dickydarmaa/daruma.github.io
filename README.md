@@ -6,7 +6,7 @@ Selamat datang di **portofolio data saya**! Repository ini berisi kumpulan proye
 
 - **/projects/product-sales-dashboard** – Dashboard atau analisis data pertama  
 - **/projects/student-performance-dashboard** – Dashboard atau analisis data kedua  
-- **/projects/** – … dan seterusnya  
+- **/projects/...** – … dan seterusnya  
 
 Setiap proyek memiliki link GitHub Pages sendiri atau file README masing-masing untuk menjelaskan detail proyek.  
 
@@ -15,8 +15,7 @@ Setiap proyek memiliki link GitHub Pages sendiri atau file README masing-masing 
 | Proyek | Deskripsi Singkat | Link |
 |--------|-----------------|------|
 | product-sales-dashboard | Analisis penjualan produk fashion untuk tren pasar & preferensi pelanggan | [View Live](https://username.github.io/fashion-dashboard/) |
-| student-performance-dashboard | Deskripsi singkat project 2 | [View Live](https://username.github.io/project-2/) |
-| Project 3 | Deskripsi singkat project 3 | [View Live](https://username.github.io/project-3/) |
+| student-performance-dashboard | Analisis faktor-faktor siswa untuk menemukan tren skor dan insight belajar | [View Live](https://username.github.io/project-2/) |
 
 ## 🛠️ Tools & Teknologi
 - Python / Pandas / NumPy  
