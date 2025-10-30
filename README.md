@@ -16,7 +16,7 @@ Each project has its own GitHub Pages link or a detailed README explaining metho
 
 ## 🔗 Project Links
 
-| Project | Short Description | GitHub | Live |
+| Project | Short Description | GitHub | Dashboard |
 |--------|-----------------|------------------|----------------------|
 | product-sales-dashboard | Interactive dashboard analyzing 10-year fashion sales trends and customer preferences | [GitHub](https://github.com/dkruma/dkruma.github.io/tree/main/projects/product-sales-dashboard) | [Live](https://dkruma.github.io/product-sales-dashboard/)
 | student-performance-dashboard | Analysis of student factors affecting performance and learning trends | [GitHub](https://github.com/dkruma/dkruma.github.io/tree/main/projects/student-performance-dashboard) | [Live](https://dkruma.github.io/student-performance-dashboard/)
