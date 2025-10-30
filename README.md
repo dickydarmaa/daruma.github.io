@@ -4,10 +4,9 @@ Selamat datang di **portofolio data saya**! Repository ini berisi kumpulan proye
 
 ## 📂 Struktur Repository
 
-- **/project/-name-1** – Dashboard atau analisis data pertama  
-- **/project/-name-2** – Dashboard atau analisis data kedua  
-- **/project-name-3** – … dan seterusnya  
-- **/docs** – (Opsional) Jika menggunakan GitHub Pages untuk menampilkan dashboard
+- **/projects/product-sales-dashboard** – Dashboard atau analisis data pertama  
+- **/projects/student-performance-dashboard** – Dashboard atau analisis data kedua  
+- **/projects/** – … dan seterusnya  
 
 Setiap proyek memiliki link GitHub Pages sendiri atau file README masing-masing untuk menjelaskan detail proyek.  
 
@@ -15,8 +14,8 @@ Setiap proyek memiliki link GitHub Pages sendiri atau file README masing-masing 
 
 | Proyek | Deskripsi Singkat | Link |
 |--------|-----------------|------|
-| Product-sales-dashboard | Analisis penjualan produk fashion untuk tren pasar & preferensi pelanggan | [View Live](https://username.github.io/fashion-dashboard/) |
-| Project 2 | Deskripsi singkat project 2 | [View Live](https://username.github.io/project-2/) |
+| product-sales-dashboard | Analisis penjualan produk fashion untuk tren pasar & preferensi pelanggan | [View Live](https://username.github.io/fashion-dashboard/) |
+| student-performance-dashboard | Deskripsi singkat project 2 | [View Live](https://username.github.io/project-2/) |
 | Project 3 | Deskripsi singkat project 3 | [View Live](https://username.github.io/project-3/) |
 
 ## 🛠️ Tools & Teknologi
