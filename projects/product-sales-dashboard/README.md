@@ -77,7 +77,7 @@ Each visualization includes contextual explanations and insights to help stakeho
 
 ## How to Access the Dashboard
 View the live dashboard at:  
-[https://dickydarmaa.github.io/product-sales-dashboard/](https://dickydarmaa.github.io/product-sales-dashboard/)  
+[https://dkruma.github.io/product-sales-dashboard/](https://dkruma.github.io/product-sales-dashboard/)  
 Or download the HTML file and open it locally in your browser.
 
 ## Dashboard Usage Instructions
