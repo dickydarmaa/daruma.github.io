@@ -42,7 +42,7 @@ The following illustration shows an example chart displayed on the dashboard:
 
 ## How to Access the Dashboard
 View the live dashboard at:  
-[https://dickydarmaa.github.io/student-performance-dashboard/](https://dickydarmaa.github.io/student-performance-dashboard/)
+[https://dkruma.github.io/student-performance-dashboard/](https://dkruma.github.io/student-performance-dashboard/)
 
 ## Dashboard Usage Instructions
 - Navigate each chart by using the menu or filters.
