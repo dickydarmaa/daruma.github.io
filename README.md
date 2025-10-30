@@ -14,8 +14,8 @@ Each project has its own GitHub Pages link or a separate README explaining the p
 
 | Project | Short Description | Link |
 |--------|-----------------|------|
-| product-sales-dashboard | Analyzing fashion product sales to identify market trends & customer preferences | [View](https://dkruma.github.io/product-sales-dashboard/) |
-| student-performance-dashboard | Analyzing student factors to identify score trends and learning insights | [View](https://dkruma.github.io/student-performance-dashboard/) |
+| product-sales-dashboard | Analyzing fashion product sales to identify market trends & customer preferences | [View](https://github.com/dkruma/dkruma.github.io/tree/main/projects/product-sales-dashboard) |
+| student-performance-dashboard | Analyzing student factors to identify score trends and learning insights | [View](https://github.com/dkruma/dkruma.github.io/tree/main/projects/student-performance-dashboard) |
 
 ## 🛠️ Tools & Technologies
 - Python / Pandas / NumPy  
