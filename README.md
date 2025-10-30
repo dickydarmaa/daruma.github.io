@@ -1,40 +1,40 @@
 # Diki Darmawan - Data Portfolio
 
-Selamat datang di **portofolio data saya**! Repository ini berisi kumpulan proyek yang menunjukkan kemampuan saya di bidang **Data Analysis, Data Science, dan Data Visualization**.  
+Welcome to **my data portfolio**! This repository contains a collection of projects showcasing my skills in **Data Analysis, Data Science, and Data Visualization**.  
 
-## 📂 Struktur Repository
+## 📂 Repository Structure
 
-- **/projects/product-sales-dashboard** – Dashboard atau analisis data pertama  
-- **/projects/student-performance-dashboard** – Dashboard atau analisis data kedua  
-- **/projects/...** – … dan seterusnya  
+- **/projects/product-sales-dashboard** – First dashboard or data analysis project  
+- **/projects/student-performance-dashboard** – Second dashboard or data analysis project  
+- **/projects/...** – …and so on  
 
-Setiap proyek memiliki link GitHub Pages sendiri atau file README masing-masing untuk menjelaskan detail proyek.  
+Each project has its own GitHub Pages link or a separate README explaining the project details.  
 
-## 🔗 Link Proyek
+## 🔗 Project Links
 
-| Proyek | Deskripsi Singkat | Link |
+| Project | Short Description | Link |
 |--------|-----------------|------|
-| product-sales-dashboard | Analisis penjualan produk fashion untuk tren pasar & preferensi pelanggan | [View Live](https://username.github.io/fashion-dashboard/) |
-| student-performance-dashboard | Analisis faktor-faktor siswa untuk menemukan tren skor dan insight belajar | [View Live](https://username.github.io/project-2/) |
+| product-sales-dashboard | Analyzing fashion product sales to identify market trends & customer preferences | [View Live](https://username.github.io/fashion-dashboard/) |
+| student-performance-dashboard | Analyzing student factors to identify score trends and learning insights | [View Live](https://username.github.io/project-2/) |
 
-## 🛠️ Tools & Teknologi
+## 🛠️ Tools & Technologies
 - Python / Pandas / NumPy  
 - SQL / Database Management  
-- Machine Learning (scikit-learn, TensorFlow, atau library terkait)  
+- Machine Learning (scikit-learn, TensorFlow, or related libraries)  
 - Excel / Google Sheets  
 - Tableau / Power BI / Google Looker Studio  
 - Git & GitHub  
-- HTML / CSS / JavaScript (opsional untuk dashboard web)
+- HTML / CSS / JavaScript (optional for web dashboards)
 
-## 📌 Tujuan Portofolio
-Portofolio ini bertujuan untuk menunjukkan kemampuan saya dalam:  
-- Mengumpulkan, membersihkan, dan menganalisis data  
-- Membuat visualisasi data yang informatif  
-- Menerapkan machine learning untuk insight dan prediksi  
-- Menyediakan insight yang dapat membantu pengambilan keputusan bisnis  
+## 📌 Portfolio Purpose
+This portfolio aims to demonstrate my ability to:  
+- Collect, clean, and analyze data  
+- Create informative data visualizations  
+- Apply machine learning for insights and predictions  
+- Provide insights that support business decision-making  
 
-## 📬 Hubungi Saya
-- LinkedIn: [Diki Darmawan](bit.ly/LinkedInDikiDarmawan)  
+## 📬 Contact Me
+- LinkedIn: [Diki Darmawan](https://bit.ly/LinkedInDikiDarmawan)  
 - Email: dikidarmawan7st@gmail.com
-  
-Terima kasih sudah mengunjungi portofolio saya! ✨
+
+Thank you for visiting my portfolio! ✨
