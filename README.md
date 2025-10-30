@@ -1,39 +1,54 @@
 # Diki Darmawan - Data Portfolio
 
-Welcome to **my data portfolio**! This repository contains a collection of projects showcasing my skills in **Data Analysis, Data Science, and Data Visualization**.  
+Welcome to **my data portfolio**! This repository is a central hub for projects showcasing my skills in **Data Entry, Data Analysis, and Data Science**.
+
+---
 
 ## 📂 Repository Structure
 
-- **/projects/product-sales-dashboard** – First dashboard or data analysis project  
-- **/projects/student-performance-dashboard** – Second dashboard or data analysis project  
-- **/projects/...** – …and so on  
+- **/projects/product-sales-dashboard** – Fashion sales analysis dashboard  
+- **/projects/student-performance-dashboard** – Student performance analysis dashboard  
+- **/projects/...** – Additional projects
 
-Each project has its own GitHub Pages link or a separate README explaining the project details.  
+Each project has its own GitHub Pages link or a detailed README explaining methodology, visualizations, and insights.
+
+---
 
 ## 🔗 Project Links
 
-| Project | Short Description | Link |
-|--------|-----------------|------|
-| product-sales-dashboard | Analyzing fashion product sales to identify market trends & customer preferences | [View](https://github.com/dkruma/dkruma.github.io/tree/main/projects/product-sales-dashboard) |
-| student-performance-dashboard | Analyzing student factors to identify score trends and learning insights | [View](https://github.com/dkruma/dkruma.github.io/tree/main/projects/student-performance-dashboard) |
+| Project | Short Description | GitHub / Live Demo |
+|--------|-----------------|------------------|
+| product-sales-dashboard | Interactive dashboard analyzing 10-year fashion sales trends and customer preferences | [GitHub](https://github.com/dkruma/dkruma.github.io/tree/main/projects/product-sales-dashboard) |
+| student-performance-dashboard | Analysis of student factors affecting performance and learning trends | [GitHub](https://github.com/dkruma/dkruma.github.io/tree/main/projects/student-performance-dashboard) |
+
+---
 
 ## 🛠️ Tools & Technologies
-- Python / Pandas / NumPy  
-- SQL / Database Management  
-- Machine Learning (scikit-learn, TensorFlow, or related libraries)  
-- Excel / Google Sheets  
-- Tableau / Power BI / Google Looker Studio  
-- Git & GitHub  
-- HTML / CSS / JavaScript (optional for web dashboards)
+
+- **Excel / Google Sheets** – Data entry, cleaning, validation, and basic analysis  
+- Python / Pandas / NumPy – Data analysis and manipulation  
+- SQL / Database Management – Data querying and organization  
+- Tableau / Power BI / Google Looker Studio – Data visualization and dashboards  
+- Machine Learning (scikit-learn, TensorFlow, or related libraries) – Data science applications  
+- Git & GitHub – Version control and project management  
+- HTML / CSS / JavaScript – Web dashboards
+
+---
 
 ## 📌 Portfolio Purpose
-This portfolio aims to demonstrate my ability to:  
-- Collect, clean, and analyze data  
-- Create informative data visualizations  
-- Apply machine learning for insights and predictions  
-- Provide insights that support business decision-making  
+
+This portfolio highlights my ability in **Data Entry, Data Analysis, and Data Science** by demonstrating how I:  
+
+- Efficiently handle raw datasets: cleaning, validating, and organizing data (**Data Entry**)  
+- Extract insights and trends from data using analysis techniques (**Data Analysis**)  
+- Apply predictive models and data science methodologies to generate actionable insights (**Data Science**)  
+
+It reflects my versatility across data-focused roles, making me adaptable to positions ranging from **data entry** to **analyst** or **data scientist**.
+
+---
 
 ## 📬 Contact Me
+
 - LinkedIn: [Diki Darmawan](https://bit.ly/LinkedInDikiDarmawan)  
 - Email: dikidarmawan7st@gmail.com
 
