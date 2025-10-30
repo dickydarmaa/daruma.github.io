@@ -65,8 +65,15 @@ The initial data was collected from internal company systems and processed using
 Each visualization includes contextual explanations and insights to help stakeholders interpret the data effectively.
 
 ## Example Visualization
-- Image: Revenue ranking of top 5 products. Sweater dominates with the highest sales, followed by Jeans and T-Shirt, indicating strong customer preference for these categories.
-- Image: 10-year sales trends showing peak performance in 2021 and subsequent dramatic decline, highlighting the need for strategic intervention.
+
+- Image:  
+  ![Top 5 Products Revenue Ranking](image/top-product.png)  
+  Sweater leads in sales, followed by Jeans and T-Shirt, showing strong customer preference.
+
+- Image:  
+  ![10-Year Sales Trends](image/sales-trend.png)  
+  Shows peak performance in 2021 and dramatic decline thereafter, highlighting the need for strategic intervention.
+
 
 ## How to Access the Dashboard
 View the live dashboard at:  
@@ -129,9 +136,7 @@ Or download the HTML file and open it locally in your browser.
 
 ## Academic Context
 - **Course:** Data Mining
-- **Program:** Computer Engineering (PSTI A)
+- **Program:** Informatics Engineering
 - **Institution:** University of Lampung
 - **Academic Year:** 2024/2025
-
-## Project Structure
 
