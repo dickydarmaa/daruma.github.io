@@ -1,24 +1,23 @@
 # 🌧️ Flood Prediction System – Bandar Lampung
 
 **Predicting flood events using meteorological data and machine learning.**  
-An **end-to-end Data Science project** that applies the **Random Forest Classifier** to predict flood occurrences in **Bandar Lampung (2010–2020)** based on key weather indicators.
-
-![Correlation Matrix](img/correlation_matrix.png)
-![Feature Importance](img/feature_importance.png)
+An **end-to-end Data Science project** utilizing **Python** and a **Random Forest Classifier** to predict flood occurrences in **Bandar Lampung (2010–2020)** based on key weather indicators.
 
 ---
 
 ## Project Overview
 
-This project focuses on developing a **Flood Prediction Model for Bandar Lampung** using data science and machine learning techniques.  
-The goal is to identify key meteorological factors influencing flood events and to build a model that supports **early warning systems** for disaster prevention and decision-making.
+This project aims to develop a **flood prediction model** for Bandar Lampung using **data science and machine learning techniques**.  
+The main objectives are:
+- Identify key meteorological variables influencing flood occurrence  
+- Build a predictive model that supports **early warning and disaster management systems**
 
-The project follows an **end-to-end data science workflow**, covering:
-1. Data understanding  
-2. Preprocessing & feature engineering  
-3. Model development (Random Forest Classifier)  
-4. Model evaluation (Accuracy, Recall, Precision, AUC-ROC)  
-5. Visualization and interactive dashboard deployment
+The workflow follows an **end-to-end data science pipeline**, including:
+1. Data understanding and exploration  
+2. Data preprocessing and feature engineering  
+3. Model development using Random Forest  
+4. Model evaluation and validation  
+5. Visualization and interactive dashboard deployment  
 
 ---
 
@@ -37,25 +36,49 @@ The project follows an **end-to-end data science workflow**, covering:
 
 ## Data Description
 
-The dataset contains **historical meteorological observations and flood event records** collected from **Bandar Lampung** between **2010 and 2020**.  
-It includes daily and weekly weather variables such as:
+The dataset contains **historical meteorological observations and flood event records** from **Bandar Lampung (2010–2020)**, including:
+
 - Air Temperature (°C)  
 - Humidity (%)  
-- Rainfall (mm)  
-- Surface and Monsoon Wind Direction  
-- Temporal features (Year, Month, Day)
+- Rainfall (mm/day and mm/week)  
+- Surface Wind Direction & Monsoon Pattern  
+- Temporal Features (Year, Month, Day)
 
-> The data was cleaned, standardized, and normalized for modeling purposes to ensure analytical consistency and predictive accuracy.
+> Data was cleaned, standardized, and normalized to ensure analytical consistency and model reliability.
 
 ---
 
-## Data Preparation
+## Data Preparation & Tools
 
-- Checked and removed missing or duplicate entries  
-- Standardized numerical formats (decimal normalization)  
-- Normalized values into 0–1 range  
-- Extracted temporal features from the date column (`Year`, `Month`, `Day`)  
-- Performed correlation analysis to select the most influential features  
+Data preprocessing and transformation were performed using **Python** with the following libraries:
+
+| Step | Tools / Libraries | Description |
+|------|--------------------|--------------|
+| Data Cleaning | `pandas`, `numpy` | Handling missing values, duplicates, and formatting inconsistencies |
+| Feature Engineering | `datetime`, `pandas` | Extracting `year`, `month`, `day` features from date columns |
+| Data Normalization | `sklearn.preprocessing` | Scaling features to 0–1 range for consistent model training |
+| Exploratory Analysis | `matplotlib`, `seaborn` | Visualizing distributions, correlations, and relationships |
+| Feature Selection | `sklearn.feature_selection`, `pandas.corr()` | Identifying top predictors of flood events |
+
+> The correlation matrix (below) highlights rainfall, humidity, and temperature as the dominant predictors of flood events.
+
+---
+
+## Correlation Matrix Analysis
+
+<p align="center">
+  <img src="img/correlation_matrix.png" alt="Correlation Matrix" width="600"/>
+</p>
+
+**Interpretation:**  
+The correlation matrix visualizes relationships among meteorological variables and flood occurrences (`Terjadi Banjir`).
+
+Key findings:
+- **Rainfall (Curah Hujan)** shows the strongest positive correlation (**0.76**) with flood events.  
+- **Humidity** also has a high correlation (**0.74**), showing a strong link with moist weather conditions during floods.  
+- **Temperature** correlates moderately (**0.63**) and is inversely related to **humidity (-0.90)** — typical for tropical climates.  
+
+> 💡 **Insight:** Flood occurrence in Bandar Lampung is primarily influenced by rainfall accumulation and humidity levels, which serve as key early warning indicators.
 
 ---
 
@@ -68,7 +91,7 @@ It includes daily and weekly weather variables such as:
 | **Weights** | Balanced class weights |
 | **Validation** | Stratified 5-Fold Cross Validation |
 | **Split Ratio** | 70% Train / 30% Test |
-| **Libraries** | pandas, numpy, scikit-learn, matplotlib, seaborn |
+| **Libraries** | `scikit-learn`, `pandas`, `numpy`, `matplotlib`, `seaborn` |
 
 ---
 
@@ -81,46 +104,53 @@ It includes daily and weekly weather variables such as:
 | **Precision** | 85.7% |
 | **AUC-ROC** | 94.4% |
 | **OOB Score** | 97% |
-| **Mean Cross-Validation Score** | 90% |
+| **Cross-Validation Mean** | 90% |
 
-> ✅ The model successfully identified **all flood cases (Recall 1.0)** while maintaining **high precision** and **excellent generalization** performance.
+> ✅ The model successfully identified **all flood cases (Recall = 1.0)** while maintaining high precision and excellent generalization.
 
 ---
 
-## Feature Importance
+## Feature Importance Analysis
 
-| Rank | Feature | Importance Score |
-|------|----------|------------------|
-| 1 | Total Rainfall (mm) | 0.55 |
-| 2 | Humidity (%) | 0.15 |
-| 3 | Air Temperature (°C) | 0.13 |
-| 4 | Year | 0.05 |
-| 5 | Weekly Rainfall | 0.04 |
-| 6 | Surface Wind | 0.03 |
-| 7 | Month | 0.02 |
-| 8 | Monsoon Wind Direction | 0.02 |
-| 9 | Day | 0.01 |
+<p align="center">
+  <img src="img/feature_importance.png" alt="Feature Importance" width="600"/>
+</p>
 
-> 💡 **Rainfall** remains the most dominant factor influencing flood prediction in Bandar Lampung.
+**Interpretation:**  
+This chart ranks the contribution of each variable to the Random Forest model’s decision-making process.
+
+Key insights:
+- **Total Rainfall (mm)** is the most dominant predictor (**0.55** importance score).  
+- **Humidity** and **Temperature** follow closely, confirming their high correlation with flood risk.  
+- Temporal variables (Year, Month, Day) have minor influence, meaning flood risk depends more on **weather conditions** than seasonal timeframes.
+
+> 💡 **Conclusion:** The Random Forest model heavily relies on rainfall, humidity, and temperature to predict flood occurrences accurately.
 
 ---
 
 ## Interactive Dashboard
 
-A responsive dashboard was built using **Tailwind CSS** and **Chart.js**, providing real-time visualization of:
-- Model performance metrics (accuracy, recall, precision, AUC)
-- Feature importance analysis
-- Confusion matrix
-- Correlation matrix
-- Cross-validation and OOB score results
+A responsive dashboard was developed using **Tailwind CSS** and **Chart.js** to visualize model insights.
 
-### Demo File:
-> [index.html](./index.html)
+**Dashboard Features:**
+- Model performance metrics (Accuracy, Recall, Precision, AUC)
+- Feature importance ranking  
+- Confusion matrix visualization  
+- Correlation matrix display  
+- OOB and cross-validation metrics  
 
-**Preview:**
-![Dashboard Preview](./preview-dashboard.png)
+<p align="center">
+  <img src="./preview-dashboard.png" alt="Flood Prediction Dashboard Preview" width="700"/>
+</p>
+
+<p align="center"><em>Figure: Interactive dashboard visualizing model metrics and feature impact.</em></p>
+
+<p align="center">
+  <a href="https://dkruma.github.io/flood-prediction-system" target="_blank">
+    <img src="https://img.shields.io/badge/View%20Live%20Dashboard-%23007ACC.svg?&style=for-the-badge&logo=google-chrome&logoColor=white" alt="View Live Dashboard"/>
+  </a>
+</p>
 
 ---
 
 ## Project Architecture
-
