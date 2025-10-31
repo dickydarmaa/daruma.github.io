@@ -20,7 +20,7 @@ Each project has its own GitHub Pages link or a detailed README explaining metho
 | Project | Short Description | GitHub | Dashboard |
 |--------|-----------------|------------------|----------------------|
 | product-sales-analysis | Interactive dashboard analyzing 10-year fashion sales trends and customer preferences | [GitHub](https://github.com/dkruma/dkruma.github.io/tree/main/projects/product-sales-analysis) | [Live](https://dkruma.github.io/product-sales-dashboard/)
-| student-performance-analysis | Analysis of student factors affecting performance and learning trends | [GitHub](https://github.com/dkruma/dkruma.github.io/tree/main/projects/student-performance-dashboard) | [Live](https://dkruma.github.io/student-performance-dashboard/)
+| student-performance-analysis | Analysis of student factors affecting performance and learning trends | [GitHub](https://github.com/dkruma/dkruma.github.io/tree/main/projects/student-performance-analysis) | [Live](https://dkruma.github.io/student-performance-dashboard/)
 | flood-prediction-system | Predictive dashboard analyzing rainfall, humidity, and temperature patterns to estimate flood risks in Bandar Lampung | [GitHub](https://github.com/dkruma/dkruma.github.io/tree/main/projects/flood-prediction-system) | [Live](https://dkruma.github.io/student-performance-dashboard/)
 
 ---
