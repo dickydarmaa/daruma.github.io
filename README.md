@@ -8,7 +8,7 @@ Welcome to **my data portfolio**! This repository is a central hub for projects 
 
 - **/projects/product-sales-analysis** – Fashion sales analysis dashboard  
 - **/projects/student-performance-analysis** – Student performance analysis dashboard
-- **/projects/flood-prediction-system** – 
+- **/projects/flood-prediction-system** – Weather-based flood risk analysis dashboard
 - **/projects/...** – Additional projects
 
 Each project has its own GitHub Pages link or a detailed README explaining methodology, visualizations, and insights.
