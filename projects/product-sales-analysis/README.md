@@ -72,17 +72,6 @@ Sweater leads with $238,096, followed by Jeans ($219,219) and T-Shirt ($192,426)
 
 ---
 
-### 🏭 Annual Production Trends
-Shows production quantity trends from 2014–2023.  
-Highlights peak production in 2021 and dramatic decline through 2023.  
-Tracks 5 major product categories simultaneously.
-
-<p align="center">
-  <img src="img/annual-production.png" alt="Annual Production Trends" width="650"/>
-</p>
-
----
-
 ### 💵 Annual Sales Trends
 Illustrates revenue trends over the 10-year period.  
 Demonstrates strong correlation between production volume and sales revenue.  
@@ -90,28 +79,6 @@ Identifies critical inflection points in sales performance.
 
 <p align="center">
   <img src="img/annual-sales.png" alt="Annual Sales Trends" width="650"/>
-</p>
-
----
-
-### 👥 Average Customer Age by Location
-Presents demographic distribution across major cities.  
-Shows average customer ages ranging from 42–47 years.  
-Covers key locations: Yogyakarta, Bali, Semarang, Bandung, and Jakarta.
-
-<p align="center">
-  <img src="img/customer-age.png" alt="Average Customer Age by Location" width="650"/>
-</p>
-
----
-
-### 📦 Product Profile: Price & Stock
-Combines bar chart (price) and line chart (stock levels).  
-Provides a comprehensive view of product portfolio.  
-Enables inventory optimization analysis.
-
-<p align="center">
-  <img src="img/product-profile.png" alt="Product Profile: Price & Stock" width="650"/>
 </p>
 
 ---
@@ -179,7 +146,7 @@ A responsive dashboard was developed using **Tailwind CSS** and **Chart.js** to 
 - Tab navigation for conclusions, recommendations, and methodology  
 
 <p align="center">
-  <img src="img/product-sales-dashboard.png" alt="Product Sales Dashboard Preview" width="700"/>
+  <img src="img/productsalesdashboard.png" alt="Product Sales Dashboard Preview" width="700"/>
 </p>
 
 <p align="center"><em>Figure: Interactive dashboard visualizing product performance, customer demographics, and sales trends.</em></p>
