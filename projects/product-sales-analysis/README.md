@@ -67,7 +67,7 @@ Displays total revenue for the top-performing products.
 Sweater leads with $238,096, followed by Jeans ($219,219) and T-Shirt ($192,426).
 
 <p align="center">
-  <img src="img/top5-products.png" alt="Top 5 Best-Selling Products" width="650"/>
+  <img src="img/top-product.png" alt="Top 5 Best-Selling Products" width="650"/>
 </p>
 
 ---
@@ -78,7 +78,7 @@ Demonstrates strong correlation between production volume and sales revenue.
 Identifies critical inflection points in sales performance.
 
 <p align="center">
-  <img src="img/annual-sales.png" alt="Annual Sales Trends" width="650"/>
+  <img src="img/sales-trend.png" alt="Annual Sales Trends" width="650"/>
 </p>
 
 ---
