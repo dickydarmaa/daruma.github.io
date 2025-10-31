@@ -121,7 +121,7 @@ The initial data was collected from internal company systems and processed using
 
 Each visualization includes contextual explanations and insights to help stakeholders interpret the data effectively.
 
-## How to Access the Dashboard
+## Interactive Dashboard
 
 <p align="center">
   <img src="img/productsalesdashboard.png" alt="Product Sales Dashboard Preview" width="700"/>
@@ -134,13 +134,6 @@ Each visualization includes contextual explanations and insights to help stakeho
     <img src="https://img.shields.io/badge/View%20Live%20Dashboard-%23007ACC.svg?&style=for-the-badge&logo=google-chrome&logoColor=white" alt="View Live Dashboard"/>
   </a>
 </p>
-
-## Dashboard Usage Instructions
-- **Navigate the Interface:** Scroll through different sections to view various analyses.
-- **Interact with Charts:** Hover over data points to see detailed values and additional information.
-- **Use Tab Navigation:** Click on "Conclusion," "Recommendations," or "Methodology" tabs to explore different aspects of the analysis.
-- **Responsive Design:** Access the dashboard from desktop, tablet, or mobile devices for optimal viewing experience.
-- **Export Insights:** Use the visual insights to understand key factors affecting product sales performance and make data-driven decisions.
 
 ## Academic Context
 - **Course:** Data Mining
