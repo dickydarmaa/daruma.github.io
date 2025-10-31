@@ -1,68 +1,73 @@
 # 👕 Product Sales Analysis Dashboard – Diki Darmawan
 
 ## 📘 Overview
-This project features an interactive dashboard visualizing key factors influencing product sales performance in the fashion industry.  
-The dashboard provides insights into **sales trends, production patterns, and customer demographics** that affect product revenue from **2014 to 2023**.
+This project presents an **interactive dashboard** that visualizes the key factors influencing product sales performance in the fashion industry.  
+The dashboard provides insights into **sales trends, production patterns, and customer demographics** affecting revenue from **2014 to 2023**.
 
 ---
 
 ## 🎯 Project Scope
 - Analyze and visualize sales trends across different product categories over a 10-year period.  
-- Display the correlation between production volume and sales revenue.  
-- Show the impact of customer demographics (age and location) on product preferences.  
+- Display correlations between production volume and sales revenue.  
+- Explore how customer demographics (age and location) impact product preferences.  
 - Identify top-performing products and declining trends.  
-- Provide actionable recommendations to improve sales performance and inventory management.
+- Provide actionable recommendations to improve sales and inventory management.
 
 ---
 
-## ⚙️ Features
-- Visual and interactive representation of sales data with multiple chart types.  
-- Clear insights and contextual explanations for each visualization.  
-- Responsive dashboard design accessible on desktop and mobile devices.  
-- Tabbed interface for organized presentation of **Conclusions**, **Recommendations**, and **Methodology**.  
-- Real-time interactive charts with hover effects for detailed data exploration.
+## ⚙️ Key Features
+- Interactive and visual representation of multi-dimensional sales data.  
+- Clear explanations and contextual insights for each visualization.  
+- **Responsive dashboard** accessible on both desktop and mobile devices.  
+- Organized tabbed interface for **Conclusions**, **Recommendations**, and **Methodology**.  
+- Real-time hover interactions for detailed data exploration.
 
 ---
 
 ## 🧰 Technology Stack
-| Tool | Purpose |
-|------|----------|
-| **Microsoft Excel** | Data collection, cleaning, and exploration using pivot tables |
-| **Tableau Public** | Advanced trend and correlation visualization |
-| **Chart.js** | Interactive JavaScript charting library for dashboard components |
-| **HTML/CSS/JavaScript** | Frontend development for responsive dashboard |
-| **GitHub Pages** | Hosting for live dashboard access |
+| Tool / Language | Purpose |
+|------------------|----------|
+| **Python (pandas, numpy, matplotlib, seaborn)** | Data cleaning, transformation, and exploratory analysis |
+| **Microsoft Excel** | Data validation and summary analysis using Pivot Tables |
+| **Tableau Public** | Advanced data visualization and trend analysis |
+| **Chart.js** | Interactive charting library for frontend visualization |
+| **HTML/CSS/JavaScript** | Responsive dashboard interface development |
+| **GitHub Pages** | Hosting for live dashboard deployment |
 
 ---
 
 ## 📊 Data Analysis Methodology
-The initial data was collected from internal company systems and processed using **Microsoft Excel**.  
-Key steps include:
+The initial dataset was sourced from internal company systems and processed using **Python** and **Microsoft Excel**.  
+The workflow follows a complete **data preparation and visualization pipeline**:
 
-1. **Data Cleaning:**  
-   Removing duplicates, fixing input errors, and ensuring consistency across datasets (Customers, Products, Sales).
+1. **Data Cleaning with Python**  
+   - Removed duplicates and null values using `pandas`.  
+   - Standardized numerical and date formats.  
+   - Handled missing values using mean/median imputation.  
+   - Normalized and encoded categorical variables.  
 
-2. **Data Exploration:**  
-   Examining distributions and identifying key variables such as product categories, sales periods, and demographics.
+2. **Exploratory Data Analysis (EDA)**  
+   - Conducted descriptive statistics with **pandas** and **numpy**.  
+   - Created correlation heatmaps and pair plots using **seaborn**.  
+   - Identified relationships between product categories, revenue, and production.  
 
-3. **Pivot Tables:**  
-   Grouping and summarizing data by:
-   - Total sales revenue by product  
-   - Annual sales trends by category  
-   - Production quantities per year  
-   - Average customer age by location  
+3. **Data Summarization in Excel**  
+   - Built **Pivot Tables** to summarize sales by product, year, and customer segment.  
+   - Analyzed trends in production quantity and revenue across categories.  
+   - Calculated average customer age by region.
 
-4. **Descriptive Analysis:**  
-   Identifying correlations between production, revenue, and customer factors.
+4. **Descriptive Analysis**  
+   - Combined Python and Excel findings to understand relationships between production, revenue, and demographics.  
 
-5. **Visualization:**  
-   Using **Tableau** and **Chart.js** for dashboard visualization and interactivity.
+5. **Visualization & Dashboard Development**  
+   - Visualized key results using **Tableau Public** for trend exploration.  
+   - Integrated visuals into a **Chart.js-powered dashboard** for real-time interactivity.
 
 ---
 
 ## 📈 Example Visualizations
 
-### 🏆 Top 5 Products Revenue Ranking
+### 🏆 Top 5 Best-Selling Products
 Displays total revenue for the top-performing products.  
 Sweater leads with $238,096, followed by Jeans ($219,219) and T-Shirt ($192,426).
 
@@ -73,8 +78,8 @@ Sweater leads with $238,096, followed by Jeans ($219,219) and T-Shirt ($192,426)
 ---
 
 ### 💵 Annual Sales Trends
-Illustrates revenue trends over the 10-year period.  
-Demonstrates strong correlation between production volume and sales revenue.  
+Shows revenue trends across the 10-year period.  
+Demonstrates a strong correlation between production volume and sales revenue.  
 Identifies critical inflection points in sales performance.
 
 <p align="center">
@@ -83,65 +88,65 @@ Identifies critical inflection points in sales performance.
 
 ---
 
-## 💡 Key Insights from Data
+## 💡 Key Insights
 
 ### 🛍️ Sales Performance
-- Sweater is the top-performing product with **$238,096** in total revenue (2014–2023).  
-- Top 5 products dominate total revenue: Sweater, Jeans, T-Shirt, Sunglasses, and Jacket.  
-- Strong revenue disparity highlights clear customer preference patterns.
+- Sweater is the top-performing product with total revenue of **$238,096 (2014–2023)**.  
+- The top 5 products dominate total sales: Sweater, Jeans, T-Shirt, Sunglasses, and Jacket.  
+- Significant revenue gaps indicate strong customer preference concentration.
 
 ### 📉 Critical Trends
-- **Peak Year:** 2021 marks the highest sales and production levels.  
-- **Decline:** 2021–2023 saw a 65–90% decrease in production and sales.  
-- **Correlation:** Production volume strongly impacts sales revenue.
+- **Peak Year:** 2021 recorded the highest production and sales volume.  
+- **Decline:** From 2021–2023, both metrics dropped by 65–90%.  
+- **Correlation:** Sales revenue is directly impacted by production output.
 
 ### 👥 Customer Demographics
 - Target age group: **42–47 years**.  
-- Key markets: Jakarta (44y), Yogyakarta (45y), Semarang (46y), Bandung (47y).  
-- Relatively uniform distribution suggests a well-defined target segment.
+- Major markets: Jakarta (44y), Yogyakarta (45y), Semarang (46y), Bandung (47y).  
+- Consistent age distribution indicates a well-defined customer segment.
 
 ### 🧾 Product Portfolio
 - Price range: $12 (Hat) – $92 (Sweater).  
-- Stock variation: 53 (Scarf) – 182 units (Jacket/Hat).  
-- Inventory imbalance suggests restocking opportunities for high-demand items.
+- Stock range: 53 (Scarf) – 182 units (Jacket/Hat).  
+- Inventory imbalance highlights restocking opportunities for high-demand items.
 
 ---
 
 ## 🧩 Recommendations
 
 ### 1️⃣ Immediate Actions
-- Investigate **2021–2023 sales decline** through deeper trend analysis.  
-- **Optimize inventory** based on product performance.  
-- Focus marketing on **Sweater**, **Jeans**, and **T-Shirt**.
+- Investigate the **2021–2023 sales decline** to identify root causes.  
+- **Optimize inventory** based on product demand and turnover.  
+- Focus marketing efforts on **Sweater**, **Jeans**, and **T-Shirt** categories.
 
 ### 2️⃣ Strategic Initiatives
-- Develop new products tailored to the **40s demographic**.  
-- Localize marketing campaigns for **Jakarta, Bandung, Yogyakarta, Semarang, and Bali**.  
-- Refine pricing strategy for underperforming items.  
-- Implement loyalty programs for repeat customers.
+- Develop new product lines tailored to the **40s age demographic**.  
+- Launch location-specific marketing campaigns in **Jakarta, Bandung, Yogyakarta, Semarang, and Bali**.  
+- Reassess pricing strategies for low-performing products.  
+- Implement customer loyalty programs to retain high-value buyers.
 
 ### 3️⃣ Operational Improvements
-- Conduct **quarterly trend monitoring**.  
-- Align **production volumes** with demand forecasts.  
-- Improve **supply chain responsiveness**.  
-- Continue **data-driven decision-making** practices.
+- Conduct **quarterly sales trend monitoring**.  
+- Align **production volume** with demand forecasts.  
+- Improve supply chain efficiency for faster market response.  
+- Continue leveraging **data-driven decision-making** in operations.
 
 ### 4️⃣ Future Research
-- Conduct **customer satisfaction surveys**.  
-- Perform **competitive benchmarking**.  
-- Explore **new demographics** and markets.  
-- Innovate **new product categories** based on feedback.
+- Conduct **customer satisfaction surveys** for feedback-driven insights.  
+- Perform **competitive benchmarking** with similar brands.  
+- Explore **new customer demographics** and market regions.  
+- Innovate **new product categories** based on behavioral data.
 
 ---
 
 ## 🧭 Interactive Dashboard
 
-A responsive dashboard was developed using **Tailwind CSS** and **Chart.js** to visualize all product, sales, and demographic insights interactively.
+The dashboard was built using **Tailwind CSS** and **Chart.js**, integrating results from Python and Excel analyses for real-time visualization.
 
 **Dashboard Features:**
 - Top 5 best-selling products (bar chart)  
 - Annual production and sales trends (line charts)  
-- Customer demographic overview (doughnut chart)  
+- Customer demographics by location (doughnut chart)  
 - Product portfolio analysis (mixed chart)  
 - Tab navigation for conclusions, recommendations, and methodology  
 
