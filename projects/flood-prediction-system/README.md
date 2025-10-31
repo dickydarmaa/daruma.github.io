@@ -8,7 +8,7 @@ An **end-to-end Data Science project** that applies the **Random Forest Classifi
 
 ---
 
-## 📘 Project Overview
+## Project Overview
 
 This project focuses on developing a **Flood Prediction Model for Bandar Lampung** using data science and machine learning techniques.  
 The goal is to identify key meteorological factors influencing flood events and to build a model that supports **early warning systems** for disaster prevention and decision-making.
@@ -22,7 +22,7 @@ The project follows an **end-to-end data science workflow**, covering:
 
 ---
 
-## 🧠 Key Insights
+## Key Insights
 
 | Factor | Correlation with Flood |
 |--------|------------------------|
@@ -35,7 +35,7 @@ The project follows an **end-to-end data science workflow**, covering:
 
 ---
 
-## ⚙️ Data Description
+## Data Description
 
 The dataset contains **historical meteorological observations and flood event records** collected from **Bandar Lampung** between **2010 and 2020**.  
 It includes daily and weekly weather variables such as:
@@ -49,7 +49,7 @@ It includes daily and weekly weather variables such as:
 
 ---
 
-## 🧼 Data Preparation
+## Data Preparation
 
 - Checked and removed missing or duplicate entries  
 - Standardized numerical formats (decimal normalization)  
@@ -59,7 +59,7 @@ It includes daily and weekly weather variables such as:
 
 ---
 
-## 🤖 Model Specification
+## Model Specification
 
 | Component | Description |
 |------------|-------------|
@@ -72,7 +72,7 @@ It includes daily and weekly weather variables such as:
 
 ---
 
-## 📊 Evaluation Results
+## Evaluation Results
 
 | Metric | Score |
 |--------|--------|
@@ -87,7 +87,7 @@ It includes daily and weekly weather variables such as:
 
 ---
 
-## 🧩 Feature Importance
+## Feature Importance
 
 | Rank | Feature | Importance Score |
 |------|----------|------------------|
@@ -105,7 +105,7 @@ It includes daily and weekly weather variables such as:
 
 ---
 
-## 🌐 Interactive Dashboard
+## Interactive Dashboard
 
 A responsive dashboard was built using **Tailwind CSS** and **Chart.js**, providing real-time visualization of:
 - Model performance metrics (accuracy, recall, precision, AUC)
@@ -114,7 +114,7 @@ A responsive dashboard was built using **Tailwind CSS** and **Chart.js**, provid
 - Correlation matrix
 - Cross-validation and OOB score results
 
-### 🔗 Demo File:
+### Demo File:
 > [index.html](./index.html)
 
 **Preview:**
@@ -122,5 +122,5 @@ A responsive dashboard was built using **Tailwind CSS** and **Chart.js**, provid
 
 ---
 
-## 🏗️ Project Architecture
+## Project Architecture
 
