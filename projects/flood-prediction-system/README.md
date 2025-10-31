@@ -1,8 +1,7 @@
-
 # 🌧️ Flood Prediction System – Bandar Lampung
 
 **Predicting flood events using meteorological data and machine learning.**  
-A **Data Science project** that applies the **Random Forest Classifier** to predict flood occurrences in **Bandar Lampung (2010–2020)** based on key meteorological indicators.
+An **end-to-end Data Science project** that applies the **Random Forest Classifier** to predict flood occurrences in **Bandar Lampung (2010–2020)** based on key weather indicators.
 
 ![Correlation Matrix](./korelasi.png)
 ![Feature Importance](./featureImportance.png)
@@ -12,14 +11,14 @@ A **Data Science project** that applies the **Random Forest Classifier** to pred
 ## 📘 Project Overview
 
 This project focuses on developing a **Flood Prediction Model for Bandar Lampung** using data science and machine learning techniques.  
-The goal is to identify key meteorological factors influencing flood events and to build a model that supports **early warning systems** for local disaster mitigation.
+The goal is to identify key meteorological factors influencing flood events and to build a model that supports **early warning systems** for disaster prevention and decision-making.
 
-The project follows the **CRISP-DM-inspired data science workflow**, covering:
+The project follows an **end-to-end data science workflow**, covering:
 1. Data understanding  
 2. Preprocessing & feature engineering  
-3. Modeling using Random Forest  
-4. Evaluation (Accuracy, Recall, Precision, AUC-ROC)  
-5. Visualization and deployment via interactive dashboard
+3. Model development (Random Forest Classifier)  
+4. Model evaluation (Accuracy, Recall, Precision, AUC-ROC)  
+5. Visualization and interactive dashboard deployment
 
 ---
 
@@ -32,30 +31,31 @@ The project follows the **CRISP-DM-inspired data science workflow**, covering:
 | **Humidity** | 0.74 |
 | **Air Temperature** | 0.63 |
 
-> High rainfall accumulation, elevated humidity, and higher air temperatures strongly correlate with flood events.
+> High rainfall accumulation, elevated humidity, and increased temperature strongly correlate with flood occurrence in Bandar Lampung.
 
 ---
 
-## ⚙️ Model Development
+## ⚙️ Data Description
 
-### 🧩 Data Source
-- Dataset: [Kaggle – Dataset Kejadian Banjir dan Variabel Pendukung](https://www.kaggle.com/datasets/ramadhannurpambudi/dataset-kejadian-banjir-dan-variabel-pendukung)
-- Location: Bandar Lampung, Indonesia  
-- Period: 2010–2020  
-- Total Records: 50 samples  
+The dataset contains **historical meteorological observations and flood event records** collected from **Bandar Lampung** between **2010 and 2020**.  
+It includes daily and weekly weather variables such as:
+- Air Temperature (°C)  
+- Humidity (%)  
+- Rainfall (mm)  
+- Surface and Monsoon Wind Direction  
+- Temporal features (Year, Month, Day)
 
-### 🔍 Features
-| Category | Variables |
-|-----------|------------|
-| Meteorological | Air Temperature, Humidity, Surface Wind, Monsoon Direction, Daily Rainfall, Weekly Rainfall |
-| Temporal | Year, Month, Day |
-| Target | Flood Occurred (1=Yes, 0=No) |
+> The data was cleaned, standardized, and normalized for modeling purposes to ensure analytical consistency and predictive accuracy.
 
-### 🧼 Preprocessing Steps
-- Checked for missing and duplicate values  
-- Standardized numeric formats  
-- Normalized data to 0–1 range  
-- Converted `Tanggal` to temporal features (`Year`, `Month`, `Day`)
+---
+
+## 🧼 Data Preparation
+
+- Checked and removed missing or duplicate entries  
+- Standardized numerical formats (decimal normalization)  
+- Normalized values into 0–1 range  
+- Extracted temporal features from the date column (`Year`, `Month`, `Day`)  
+- Performed correlation analysis to select the most influential features  
 
 ---
 
@@ -83,7 +83,7 @@ The project follows the **CRISP-DM-inspired data science workflow**, covering:
 | **OOB Score** | 97% |
 | **Mean Cross-Validation Score** | 90% |
 
-> ✅ The model successfully identified **all flood cases (Recall 1.0)** while maintaining **high precision** and **strong generalization**.
+> ✅ The model successfully identified **all flood cases (Recall 1.0)** while maintaining **high precision** and **excellent generalization** performance.
 
 ---
 
@@ -98,21 +98,21 @@ The project follows the **CRISP-DM-inspired data science workflow**, covering:
 | 5 | Weekly Rainfall | 0.04 |
 | 6 | Surface Wind | 0.03 |
 | 7 | Month | 0.02 |
-| 8 | Monsoon Direction | 0.02 |
+| 8 | Monsoon Wind Direction | 0.02 |
 | 9 | Day | 0.01 |
 
-> 💡 **Rainfall** dominates as the strongest indicator of flood likelihood.
+> 💡 **Rainfall** remains the most dominant factor influencing flood prediction in Bandar Lampung.
 
 ---
 
 ## 🌐 Interactive Dashboard
 
-A responsive dashboard built using **Tailwind CSS** and **Chart.js** to visualize:
-- Model metrics (accuracy, recall, precision, AUC)
-- Feature importance
+A responsive dashboard was built using **Tailwind CSS** and **Chart.js**, providing real-time visualization of:
+- Model performance metrics (accuracy, recall, precision, AUC)
+- Feature importance analysis
 - Confusion matrix
 - Correlation matrix
-- Cross-validation & OOB performance
+- Cross-validation and OOB score results
 
 ### 🔗 Demo File:
 > [index.html](./index.html)
