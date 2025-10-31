@@ -67,11 +67,11 @@ Each visualization includes contextual explanations and insights to help stakeho
 ## Example Visualization
 
 - Image:  
-  ![Top 5 Products Revenue Ranking](image/top-product.png)  
+  ![Top 5 Products Revenue Ranking](img/top-product.png)  
   Sweater leads in sales, followed by Jeans and T-Shirt, showing strong customer preference.
 
 - Image:  
-  ![10-Year Sales Trends](image/sales-trend.png)  
+  ![10-Year Sales Trends](img/sales-trend.png)  
   Shows peak performance in 2021 and dramatic decline thereafter, highlighting the need for strategic intervention.
 
 
