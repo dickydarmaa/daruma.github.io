@@ -74,19 +74,6 @@ Each visualization includes contextual explanations and insights to help stakeho
   ![10-Year Sales Trends](img/sales-trend.png)  
   Shows peak performance in 2021 and dramatic decline thereafter, highlighting the need for strategic intervention.
 
-
-## How to Access the Dashboard
-View the live dashboard at:  
-[https://dkruma.github.io/product-sales-dashboard/](https://dkruma.github.io/product-sales-dashboard/)  
-Or download the HTML file and open it locally in your browser.
-
-## Dashboard Usage Instructions
-- **Navigate the Interface:** Scroll through different sections to view various analyses.
-- **Interact with Charts:** Hover over data points to see detailed values and additional information.
-- **Use Tab Navigation:** Click on "Conclusion," "Recommendations," or "Methodology" tabs to explore different aspects of the analysis.
-- **Responsive Design:** Access the dashboard from desktop, tablet, or mobile devices for optimal viewing experience.
-- **Export Insights:** Use the visual insights to understand key factors affecting product sales performance and make data-driven decisions.
-
 ## Key Insights from Data
 
 ### Sales Performance
@@ -133,6 +120,18 @@ Or download the HTML file and open it locally in your browser.
 - Competitive analysis: Benchmark against industry competitors.
 - Market expansion: Explore opportunities in underrepresented age groups and locations.
 - Product innovation: Test new product categories based on customer feedback.
+
+## How to Access the Dashboard
+View the live dashboard at:  
+[https://dkruma.github.io/product-sales-dashboard/](https://dkruma.github.io/product-sales-dashboard/)  
+Or download the HTML file and open it locally in your browser.
+
+## Dashboard Usage Instructions
+- **Navigate the Interface:** Scroll through different sections to view various analyses.
+- **Interact with Charts:** Hover over data points to see detailed values and additional information.
+- **Use Tab Navigation:** Click on "Conclusion," "Recommendations," or "Methodology" tabs to explore different aspects of the analysis.
+- **Responsive Design:** Access the dashboard from desktop, tablet, or mobile devices for optimal viewing experience.
+- **Export Insights:** Use the visual insights to understand key factors affecting product sales performance and make data-driven decisions.
 
 ## Academic Context
 - **Course:** Data Mining
