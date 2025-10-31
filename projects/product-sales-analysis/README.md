@@ -122,9 +122,18 @@ The initial data was collected from internal company systems and processed using
 Each visualization includes contextual explanations and insights to help stakeholders interpret the data effectively.
 
 ## How to Access the Dashboard
-View the live dashboard at:  
-[https://dkruma.github.io/product-sales-dashboard/](https://dkruma.github.io/product-sales-dashboard/)  
-Or download the HTML file and open it locally in your browser.
+
+<p align="center">
+  <img src="img/product-sales-dashboard.png" alt="Product Sales Dashboard Preview" width="700"/>
+</p>
+
+<p align="center"><em>Figure: Interactive dashboard visualizing product performance, customer demographics, and sales trends.</em></p>
+
+<p align="center">
+  <a href="https://dkruma.github.io/product-sales-dashboard" target="_blank">
+    <img src="https://img.shields.io/badge/View%20Live%20Dashboard-%23007ACC.svg?&style=for-the-badge&logo=google-chrome&logoColor=white" alt="View Live Dashboard"/>
+  </a>
+</p>
 
 ## Dashboard Usage Instructions
 - **Navigate the Interface:** Scroll through different sections to view various analyses.
