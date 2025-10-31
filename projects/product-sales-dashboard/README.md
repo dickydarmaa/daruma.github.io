@@ -139,4 +139,3 @@ Or download the HTML file and open it locally in your browser.
 - **Program:** Informatics Engineering
 - **Institution:** University of Lampung
 - **Academic Year:** 2024/2025
-
