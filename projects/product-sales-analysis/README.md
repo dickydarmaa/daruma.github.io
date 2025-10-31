@@ -62,11 +62,57 @@ Key steps include:
 
 ## 📈 Example Visualizations
 
-**Top 5 Products Revenue Ranking**  
-Sweater leads in sales, followed by Jeans and T-Shirt, showing strong customer preference.
+### 🏆 Top 5 Products Revenue Ranking
+Displays total revenue for the top-performing products.  
+Sweater leads with $238,096, followed by Jeans ($219,219) and T-Shirt ($192,426).
 
-**10-Year Sales Trends**  
-Shows peak performance in 2021 and a significant decline afterward, highlighting the need for strategic intervention.
+<p align="center">
+  <img src="img/top5-products.png" alt="Top 5 Best-Selling Products" width="650"/>
+</p>
+
+---
+
+### 🏭 Annual Production Trends
+Shows production quantity trends from 2014–2023.  
+Highlights peak production in 2021 and dramatic decline through 2023.  
+Tracks 5 major product categories simultaneously.
+
+<p align="center">
+  <img src="img/annual-production.png" alt="Annual Production Trends" width="650"/>
+</p>
+
+---
+
+### 💵 Annual Sales Trends
+Illustrates revenue trends over the 10-year period.  
+Demonstrates strong correlation between production volume and sales revenue.  
+Identifies critical inflection points in sales performance.
+
+<p align="center">
+  <img src="img/annual-sales.png" alt="Annual Sales Trends" width="650"/>
+</p>
+
+---
+
+### 👥 Average Customer Age by Location
+Presents demographic distribution across major cities.  
+Shows average customer ages ranging from 42–47 years.  
+Covers key locations: Yogyakarta, Bali, Semarang, Bandung, and Jakarta.
+
+<p align="center">
+  <img src="img/customer-age.png" alt="Average Customer Age by Location" width="650"/>
+</p>
+
+---
+
+### 📦 Product Profile: Price & Stock
+Combines bar chart (price) and line chart (stock levels).  
+Provides a comprehensive view of product portfolio.  
+Enables inventory optimization analysis.
+
+<p align="center">
+  <img src="img/product-profile.png" alt="Product Profile: Price & Stock" width="650"/>
+</p>
 
 ---
 
@@ -121,33 +167,16 @@ Shows peak performance in 2021 and a significant decline afterward, highlighting
 
 ---
 
-## 📊 Dashboard Visualization Description
+## 🧭 Interactive Dashboard
 
-1. **Top 5 Best-Selling Products (Bar Chart)**
-   - Displays total revenue for the top-performing products.
-   - Sweater leads with $238,096, followed by Jeans ($219,219) and T-Shirt ($192,426).
+A responsive dashboard was developed using **Tailwind CSS** and **Chart.js** to visualize all product, sales, and demographic insights interactively.
 
-2. **Annual Production Trends (Line Chart)**
-   - Shows production quantity trends from 2014–2023.
-   - Highlights peak production in 2021 and dramatic decline through 2023.
-   - Tracks 5 major product categories simultaneously.
-
-3. **Annual Sales Trends (Line Chart)**
-   - Illustrates revenue trends over the 10-year period.
-   - Demonstrates strong correlation between production volume and sales revenue.
-   - Identifies critical inflection points in sales performance.
-
-4. **Average Customer Age by Location (Doughnut Chart)**
-   - Presents demographic distribution across major cities.
-   - Shows average customer ages ranging from 42–47 years.
-   - Covers key locations: Yogyakarta, Bali, Semarang, Bandung, and Jakarta.
-
-5. **Product Profile: Price & Stock (Mixed Chart)**
-   - Combines bar chart (price) and line chart (stock levels).
-   - Provides a comprehensive view of product portfolio.
-   - Enables inventory optimization analysis.
-
-Each visualization includes contextual explanations and insights to help stakeholders interpret the data effectively.
+**Dashboard Features:**
+- Top 5 best-selling products (bar chart)  
+- Annual production and sales trends (line charts)  
+- Customer demographic overview (doughnut chart)  
+- Product portfolio analysis (mixed chart)  
+- Tab navigation for conclusions, recommendations, and methodology  
 
 <p align="center">
   <img src="img/product-sales-dashboard.png" alt="Product Sales Dashboard Preview" width="700"/>
@@ -160,16 +189,6 @@ Each visualization includes contextual explanations and insights to help stakeho
     <img src="https://img.shields.io/badge/View%20Live%20Dashboard-%23007ACC.svg?&style=for-the-badge&logo=google-chrome&logoColor=white" alt="View Live Dashboard"/>
   </a>
 </p>
-
----
-
-## 🧭 Dashboard Usage Instructions
-- **Navigate the Interface:** Explore sections showcasing sales, production, and customer demographics.  
-- **Interact with Charts:** Hover over bars, lines, or doughnut segments to view detailed values and patterns.  
-- **Filter by Category or Time Range:** Switch tabs or use dropdowns to focus on specific years or products.  
-- **Compare Metrics:** Observe price vs. stock levels to identify inventory optimization opportunities.  
-- **Responsive Design:** Accessible on desktop, tablet, or mobile devices.  
-- **Derive Insights:** Use visuals to identify sales drivers and support data-driven business decisions.
 
 ---
 
