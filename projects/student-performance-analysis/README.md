@@ -95,7 +95,7 @@ The interactive dashboard was developed using **Google Looker Studio**, designed
 - Responsive layout for easy access across devices  
 
 <p align="center">
-  <img src="img/student-performance-dashboard-preview.png" alt="Student Performance Dashboard Preview" width="700"/>
+  <img src="img/studentperformancedashboard.png" alt="Student Performance Dashboard Preview" width="700"/>
 </p>
 
 <p align="center"><em>Figure: Interactive dashboard showing relationships between parental education, test preparation, and student scores.</em></p>
