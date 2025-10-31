@@ -3,8 +3,8 @@
 **Predicting flood events using meteorological data and machine learning.**  
 An **end-to-end Data Science project** that applies the **Random Forest Classifier** to predict flood occurrences in **Bandar Lampung (2010–2020)** based on key weather indicators.
 
-![Correlation Matrix](./korelasi.png)
-![Feature Importance](./featureImportance.png)
+![Correlation Matrix](img/correlation_matrix.png)
+![Feature Importance](img/feature_importance.png)
 
 ---
 
