@@ -36,34 +36,6 @@ The initial data was collected from internal company systems and processed using
 - **Descriptive Analysis:** Multi-dimensional analysis to identify patterns and correlations between variables.
 - **Visualization:** The analyzed data was then visualized using Tableau Public and Chart.js for the interactive dashboard.
 
-## Dashboard Visualization Description
-
-1. **Top 5 Best-Selling Products (Bar Chart)**
-   - Displays total revenue for the top-performing products.
-   - Sweater leads with $238,096, followed by Jeans ($219,219) and T-Shirt ($192,426).
-
-2. **Annual Production Trends (Line Chart)**
-   - Shows production quantity trends from 2014-2023.
-   - Highlights peak production in 2021 and dramatic decline through 2023.
-   - Tracks 5 major product categories simultaneously.
-
-3. **Annual Sales Trends (Line Chart)**
-   - Illustrates revenue trends over the 10-year period.
-   - Demonstrates strong correlation between production volume and sales revenue.
-   - Identifies critical inflection points in sales performance.
-
-4. **Average Customer Age by Location (Doughnut Chart)**
-   - Presents demographic distribution across major cities.
-   - Shows average customer ages ranging from 42-47 years.
-   - Covers key locations: Yogyakarta, Bali, Semarang, Bandung, and Jakarta.
-
-5. **Product Profile: Price & Stock (Mixed Chart)**
-   - Combines bar chart (price) and line chart (stock levels).
-   - Provides a comprehensive view of product portfolio.
-   - Enables inventory optimization analysis.
-
-Each visualization includes contextual explanations and insights to help stakeholders interpret the data effectively.
-
 ## Example Visualization
 
 - Image:  
@@ -120,6 +92,34 @@ Each visualization includes contextual explanations and insights to help stakeho
 - Competitive analysis: Benchmark against industry competitors.
 - Market expansion: Explore opportunities in underrepresented age groups and locations.
 - Product innovation: Test new product categories based on customer feedback.
+
+## Dashboard Visualization Description
+
+1. **Top 5 Best-Selling Products (Bar Chart)**
+   - Displays total revenue for the top-performing products.
+   - Sweater leads with $238,096, followed by Jeans ($219,219) and T-Shirt ($192,426).
+
+2. **Annual Production Trends (Line Chart)**
+   - Shows production quantity trends from 2014-2023.
+   - Highlights peak production in 2021 and dramatic decline through 2023.
+   - Tracks 5 major product categories simultaneously.
+
+3. **Annual Sales Trends (Line Chart)**
+   - Illustrates revenue trends over the 10-year period.
+   - Demonstrates strong correlation between production volume and sales revenue.
+   - Identifies critical inflection points in sales performance.
+
+4. **Average Customer Age by Location (Doughnut Chart)**
+   - Presents demographic distribution across major cities.
+   - Shows average customer ages ranging from 42-47 years.
+   - Covers key locations: Yogyakarta, Bali, Semarang, Bandung, and Jakarta.
+
+5. **Product Profile: Price & Stock (Mixed Chart)**
+   - Combines bar chart (price) and line chart (stock levels).
+   - Provides a comprehensive view of product portfolio.
+   - Enables inventory optimization analysis.
+
+Each visualization includes contextual explanations and insights to help stakeholders interpret the data effectively.
 
 ## How to Access the Dashboard
 View the live dashboard at:  
