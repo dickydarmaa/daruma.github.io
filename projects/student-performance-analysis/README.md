@@ -36,7 +36,7 @@ The dashboard contains several key visualizations, such as:
 ## Example Visualization
 The following illustration shows an example chart displayed on the dashboard:
 
-![Average Score by Parental Level of Education](Student_Performance_Insights-2.png)
+![Average Score by Parental Level of Education](img/Student_Performance_Insights-2.png)
 
 *Image: Average student scores by parental education level. Students with more educated parents tend to achieve higher average scores.*
 
