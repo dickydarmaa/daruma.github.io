@@ -11,6 +11,13 @@
         
         * {
             font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: #f9fafb;
         }
         
         .gradient-bg {
@@ -26,27 +33,16 @@
             box-shadow: 0 20px 40px rgba(0,0,0,0.15);
         }
         
-        .fade-in {
-            animation: fadeIn 0.8s ease-in;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .tech-badge {
-            transition: all 0.2s ease;
-        }
-        
-        .tech-badge:hover {
-            transform: scale(1.05);
+        .hero-pattern {
+            background-color: #667eea;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
         }
         
         .filter-btn {
             background: white;
             color: #6b7280;
             border: 2px solid #e5e7eb;
+            cursor: pointer;
         }
         
         .filter-btn:hover {
@@ -58,14 +54,6 @@
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             border-color: transparent;
-        }
-        
-        .project-card {
-            transition: all 0.3s ease;
-        }
-        
-        .project-card.hidden {
-            display: none;
         }
         
         .project-badge {
@@ -91,15 +79,19 @@
             background: #fce7f3;
             color: #9f1239;
         }
+        
+        .hidden {
+            display: none !important;
+        }
     </style>
 </head>
-<body class="bg-gray-50">
+<body>
     <!-- Navigation -->
     <nav class="bg-white shadow-sm sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center">
-                    <h1 class="text-2xl font-bold gradient-bg bg-clip-text text-transparent">DD.</h1>
+                    <h1 class="text-2xl font-bold gradient-bg bg-clip-text text-transparent">Diki Darmawan</h1>
                 </div>
                 <div class="hidden md:flex space-x-8">
                     <a href="#home" class="text-gray-700 hover:text-purple-600 transition">Home</a>
@@ -112,12 +104,13 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero-pattern text-white py-20 fade-in">
+    <section id="home" class="hero-pattern text-white py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
                 <div class="mb-6">
-                    <div class="w-32 h-32 mx-auto rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                        <i class="fas fa-chart-line text-6xl"></i>
+                    <div class="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-white shadow-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                        <i class="fas fa-user text-6xl text-white"></i>
+                        <!-- Ganti dengan foto: <img src="assets/profile.jpg" alt="Diki Darmawan" class="w-full h-full object-cover"> -->
                     </div>
                 </div>
                 <h1 class="text-5xl md:text-6xl font-bold mb-4">Diki Darmawan</h1>
@@ -195,8 +188,9 @@
                     </button>
                 </div>
             </div>
+            
             <div id="projects-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-
+                <!-- Projects will be loaded here by JavaScript -->
             </div>
         </div>
     </section>
@@ -209,42 +203,42 @@
                 <p class="text-gray-600">Technical skills and tools I use to deliver data-driven solutions</p>
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="p-6 rounded-xl bg-gray-50 border border-gray-200 tech-badge">
+                <div class="p-6 rounded-xl bg-gray-50 border border-gray-200 hover:shadow-lg transition">
                     <i class="fas fa-table text-3xl text-green-600 mb-3"></i>
                     <h4 class="font-semibold text-gray-900 mb-2">Spreadsheets</h4>
                     <p class="text-sm text-gray-600">Excel, Google Sheets</p>
                 </div>
-                <div class="p-6 rounded-xl bg-gray-50 border border-gray-200 tech-badge">
+                <div class="p-6 rounded-xl bg-gray-50 border border-gray-200 hover:shadow-lg transition">
                     <i class="fab fa-python text-3xl text-blue-600 mb-3"></i>
                     <h4 class="font-semibold text-gray-900 mb-2">Python</h4>
                     <p class="text-sm text-gray-600">Pandas, NumPy, Scikit-learn</p>
                 </div>
-                <div class="p-6 rounded-xl bg-gray-50 border border-gray-200 tech-badge">
+                <div class="p-6 rounded-xl bg-gray-50 border border-gray-200 hover:shadow-lg transition">
                     <i class="fas fa-database text-3xl text-orange-600 mb-3"></i>
                     <h4 class="font-semibold text-gray-900 mb-2">Database</h4>
                     <p class="text-sm text-gray-600">SQL, Database Management</p>
                 </div>
-                <div class="p-6 rounded-xl bg-gray-50 border border-gray-200 tech-badge">
+                <div class="p-6 rounded-xl bg-gray-50 border border-gray-200 hover:shadow-lg transition">
                     <i class="fas fa-chart-pie text-3xl text-purple-600 mb-3"></i>
                     <h4 class="font-semibold text-gray-900 mb-2">Visualization</h4>
                     <p class="text-sm text-gray-600">Tableau, Power BI, Looker</p>
                 </div>
-                <div class="p-6 rounded-xl bg-gray-50 border border-gray-200 tech-badge">
+                <div class="p-6 rounded-xl bg-gray-50 border border-gray-200 hover:shadow-lg transition">
                     <i class="fas fa-robot text-3xl text-red-600 mb-3"></i>
                     <h4 class="font-semibold text-gray-900 mb-2">Machine Learning</h4>
                     <p class="text-sm text-gray-600">TensorFlow, Scikit-learn</p>
                 </div>
-                <div class="p-6 rounded-xl bg-gray-50 border border-gray-200 tech-badge">
+                <div class="p-6 rounded-xl bg-gray-50 border border-gray-200 hover:shadow-lg transition">
                     <i class="fab fa-git-alt text-3xl text-gray-800 mb-3"></i>
                     <h4 class="font-semibold text-gray-900 mb-2">Version Control</h4>
                     <p class="text-sm text-gray-600">Git, GitHub</p>
                 </div>
-                <div class="p-6 rounded-xl bg-gray-50 border border-gray-200 tech-badge">
+                <div class="p-6 rounded-xl bg-gray-50 border border-gray-200 hover:shadow-lg transition">
                     <i class="fas fa-code text-3xl text-yellow-600 mb-3"></i>
                     <h4 class="font-semibold text-gray-900 mb-2">Web Development</h4>
                     <p class="text-sm text-gray-600">HTML, CSS, JavaScript</p>
                 </div>
-                <div class="p-6 rounded-xl bg-gray-50 border border-gray-200 tech-badge">
+                <div class="p-6 rounded-xl bg-gray-50 border border-gray-200 hover:shadow-lg transition">
                     <i class="fas fa-chart-line text-3xl text-teal-600 mb-3"></i>
                     <h4 class="font-semibold text-gray-900 mb-2">Analysis</h4>
                     <p class="text-sm text-gray-600">Statistical Analysis, EDA</p>
@@ -326,14 +320,19 @@
         }
 
         // Render projects
-        function renderProjects(filter = 'all') {
+        function renderProjects(filter) {
             const container = document.getElementById('projects-container');
             const filteredProjects = filter === 'all' 
                 ? projects 
                 : projects.filter(p => p.category === filter);
 
+            if (filteredProjects.length === 0) {
+                container.innerHTML = '<div class="col-span-3 text-center text-gray-500 py-12">No projects found in this category yet.</div>';
+                return;
+            }
+
             container.innerHTML = filteredProjects.map(project => `
-                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover project-card" data-category="${project.category}">
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover" data-category="${project.category}">
                     <div class="h-48 bg-gradient-to-br ${project.gradient} flex items-center justify-center">
                         <i class="fas ${project.icon} text-6xl text-white"></i>
                     </div>
@@ -366,8 +365,8 @@
             renderProjects(category);
         }
 
-        // Initialize projects on page load
-        document.addEventListener('DOMContentLoaded', () => {
+        // Initialize on page load
+        window.addEventListener('DOMContentLoaded', function() {
             renderProjects('all');
         });
 
@@ -380,28 +379,6 @@
                     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
-        });
-
-        // Add scroll animation
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('section').forEach(section => {
-            section.style.opacity = '0';
-            section.style.transform = 'translateY(20px)';
-            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(section);
         });
     </script>
 </body>
