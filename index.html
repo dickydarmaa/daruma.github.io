@@ -1,13 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diki Darmawan - Data Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diki Darmawan - Data Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Welcome to my Data Portfolio</h1>
-    <p>Hi, I'm Diki Darmawan — this site showcases my data analytics and data science projects.</p>
-    <a href="projects/">View my projects</a>
+
+  <!-- Hero Section -->
+  <header class="hero fade-in">
+    <h1>Diki Darmawan</h1>
+    <p class="tagline">Data Entry · Data Analysis · Data Science</p>
+    <a href="#projects" class="btn">View My Projects</a>
+  </header>
+
+  <!-- Repository Structure -->
+  <section class="section fade-in">
+    <h2>📂 Repository Structure</h2>
+    <ul>
+      <li><strong>/projects/product-sales-analysis</strong> – Fashion sales analysis dashboard</li>
+      <li><strong>/projects/student-performance-analysis</strong> – Student performance analysis dashboard</li>
+      <li><strong>/projects/flood-prediction-system</strong> – Weather-based flood risk analysis dashboard</li>
+      <li><strong>/projects/...</strong> – Additional projects</li>
+    </ul>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="section fade-in">
+    <h2>🔗 Project Links</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <h3>Product Sales Analysis</h3>
+        <p>Interactive dashboard analyzing 10-year fashion sales trends and customer preferences.</p>
+        <div class="links">
+          <a href="https://github.com/dkruma/dkruma.github.io/tree/main/projects/product-sales-analysis" target="_blank">GitHub</a>
+          <a href="https://dkruma.github.io/product-sales-dashboard/" target="_blank">Live</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <h3>Student Performance Analysis</h3>
+        <p>Analysis of student factors affecting performance and learning trends.</p>
+        <div class="links">
+          <a href="https://github.com/dkruma/dkruma.github.io/tree/main/projects/student-performance-analysis" target="_blank">GitHub</a>
+          <a href="https://dkruma.github.io/student-performance-dashboard/" target="_blank">Live</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <h3>Flood Prediction System</h3>
+        <p>Predictive dashboard analyzing rainfall, humidity, and temperature patterns to estimate flood risks in Bandar Lampung.</p>
+        <div class="links">
+          <a href="https://github.com/dkruma/dkruma.github.io/tree/main/projects/flood-prediction-system" target="_blank">GitHub</a>
+          <a href="https://dkruma.github.io/flood-prediction-system/" target="_blank">Live</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tools & Technologies -->
+  <section class="section fade-in">
+    <h2>🛠️ Tools & Technologies</h2>
+    <div class="tools-grid">
+      <div>Excel / Google Sheets</div>
+      <div>Python / Pandas / NumPy</div>
+      <div>SQL / Database Management</div>
+      <div>Tableau / Power BI / Looker Studio</div>
+      <div>Machine Learning</div>
+      <div>Git & GitHub</div>
+      <div>HTML / CSS / JavaScript</div>
+    </div>
+  </section>
+
+  <!-- Purpose -->
+  <section class="section fade-in">
+    <h2>📌 Portfolio Purpose</h2>
+    <p>This portfolio highlights my ability in <strong>Data Entry, Data Analysis, and Data Science</strong> by demonstrating how I:</p>
+    <ul>
+      <li>Efficiently handle raw datasets: cleaning, validating, and organizing data (<strong>Data Entry</strong>)</li>
+      <li>Extract insights and trends from data using analysis techniques (<strong>Data Analysis</strong>)</li>
+      <li>Apply predictive models and data science methodologies to generate actionable insights (<strong>Data Science</strong>)</li>
+    </ul>
+    <p>It reflects my versatility across data-focused roles, making me adaptable to positions ranging from <strong>data entry</strong> to <strong>analyst</strong> or <strong>data scientist</strong>.</p>
+  </section>
+
+  <!-- Contact -->
+  <footer class="fade-in">
+    <h2>📬 Contact Me</h2>
+    <p><a href="https://bit.ly/LinkedInDikiDarmawan" target="_blank">LinkedIn</a> | <a href="mailto:dikidarmawan7st@gmail.com">Email</a></p>
+    <p class="credit">© 2025 Diki Darmawan. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Scroll animation
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = { threshold: 0.2 };
+    const appearOnScroll = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => appearOnScroll.observe(fader));
+  </script>
 </body>
 </html>
