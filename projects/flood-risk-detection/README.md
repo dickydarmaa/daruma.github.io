@@ -1,4 +1,4 @@
-# 🌧️ Flood Prediction System – Bandar Lampung
+# 🌧️ Flood Risk Detection – Bandar Lampung
 
 **Predicting flood events using meteorological data and machine learning.**  
 An **end-to-end Data Science project** utilizing **Python** and a **Random Forest Classifier** to predict flood occurrences in **Bandar Lampung (2010–2020)** based on key weather indicators.
