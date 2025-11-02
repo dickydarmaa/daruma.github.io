@@ -140,13 +140,13 @@ A responsive dashboard was developed using **Tailwind CSS** and **Chart.js** to 
 - OOB and cross-validation metrics  
 
 <p align="center">
-  <img src="img/flood-prediction-dashboard.png" alt="Flood Prediction Dashboard Preview" width="700"/>
+  <img src="img/flood-risk-detection-dashbaord.png" alt="Flood Prediction Dashboard Preview" width="700"/>
 </p>
 
 <p align="center"><em>Figure: Interactive dashboard visualizing model metrics and feature impact.</em></p>
 
 <p align="center">
-  <a href="https://dkruma.github.io/flood-prediction-system" target="_blank">
+  <a href="https://dkruma.github.io/flood-risk-detection" target="_blank">
     <img src="https://img.shields.io/badge/View%20Live%20Dashboard-%23007ACC.svg?&style=for-the-badge&logo=google-chrome&logoColor=white" alt="View Live Dashboard"/>
   </a>
 </p>
