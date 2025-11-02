@@ -8,7 +8,7 @@ Welcome to **my data portfolio**! This repository is a central hub for projects 
 
 - **/projects/product-sales-analysis** – Fashion sales analysis dashboard  
 - **/projects/student-performance-analysis** – Student performance analysis dashboard
-- **/projects/flood-prediction-system** – Weather-based flood risk analysis dashboard
+- **/projects/flood-risk-detection** – Weather-based flood risk analysis dashboard
 - **/projects/...** – Additional projects
 
 Each project has its own GitHub Pages link or a detailed README explaining methodology, visualizations, and insights.
@@ -21,7 +21,7 @@ Each project has its own GitHub Pages link or a detailed README explaining metho
 |--------|-----------------|------------------|----------------------|
 | product-sales-analysis | Interactive dashboard analyzing 10-year fashion sales trends and customer preferences | [GitHub](https://github.com/dkruma/dkruma.github.io/tree/main/projects/product-sales-analysis) | [Live](https://dkruma.github.io/product-sales-dashboard/)
 | student-performance-analysis | Analysis of student factors affecting performance and learning trends | [GitHub](https://github.com/dkruma/dkruma.github.io/tree/main/projects/student-performance-analysis) | [Live](https://dkruma.github.io/student-performance-dashboard/)
-| flood-prediction-system | Predictive dashboard analyzing rainfall, humidity, and temperature patterns to estimate flood risks in Bandar Lampung | [GitHub](https://github.com/dkruma/dkruma.github.io/tree/main/projects/flood-prediction-system) | [Live](https://dkruma.github.io/flood-prediction-system/)
+| flood-risk-detection | Predictive dashboard analyzing rainfall, humidity, and temperature patterns to estimate flood risks in Bandar Lampung | [GitHub](https://github.com/dkruma/dkruma.github.io/tree/main/projects/flood-risk-detection) | [Live](https://dkruma.github.io/flood-risk-detection/)
 
 ---
 
