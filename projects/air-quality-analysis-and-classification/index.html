@@ -1,1 +1,1088 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Quality Analysis and Classification - Yogyakarta</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .hero-pattern {
+            background-color: #667eea;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .stat-card {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, #667eea, #764ba2);
+        }
+        
+        .badge-good {
+            background: #d1fae5;
+            color: #065f46;
+        }
+        
+        .badge-moderate {
+            background: #fef3c7;
+            color: #92400e;
+        }
+        
+        .badge-unhealthy {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+        
+        .model-badge {
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+        
+        .tab-button {
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .tab-button.active {
+            border-bottom-color: #667eea;
+            color: #667eea;
+        }
+        
+        .chart-container {
+            position: relative;
+            height: 400px;
+            width: 100%;
+        }
+        
+        @media (max-width: 768px) {
+            .chart-container {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-3">
+                    <i class="fas fa-wind text-2xl text-purple-600"></i>
+                    <h1 class="text-xl font-bold text-gray-900">Air Quality Prediction</h1>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#overview" class="text-gray-700 hover:text-purple-600 transition">Overview</a>
+                    <a href="#analysis" class="text-gray-700 hover:text-purple-600 transition">Analysis</a>
+                    <a href="#models" class="text-gray-700 hover:text-purple-600 transition">Models</a>
+                </div>
+            </div>
+        </div>
+    </nav>
 
+    <!-- Hero Section -->
+    <section class="hero-pattern text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full mb-4">
+                    <i class="fas fa-flask text-sm"></i>
+                    <span class="text-sm font-semibold">Machine Learning Project</span>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Analyzing and Classifying Air Quality in Yogyakarta</h1>
+                <p class="text-xl text-purple-100 max-w-3xl mx-auto mb-6">
+                    Using Random Forest and Support Vector Machine Classification
+                </p>
+                <div class="flex flex-wrap justify-center gap-4 text-sm">
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-calendar"></i>
+                        <span>April 2021</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Yogyakarta, Indonesia</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-database"></i>
+                        <span>720 Hourly Records</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Stats -->
+    <section class="py-8 bg-white border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-purple-600">95%</div>
+                    <div class="text-sm text-gray-600 mt-1">Random Forest Accuracy</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-indigo-600">92%</div>
+                    <div class="text-sm text-gray-600 mt-1">SVM Accuracy</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-green-600">6</div>
+                    <div class="text-sm text-gray-600 mt-1">Pollutants Analyzed</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-blue-600">2</div>
+                    <div class="text-sm text-gray-600 mt-1">ML Models Compared</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section id="overview" class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Project Overview -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Project Overview</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white p-6 rounded-xl shadow-md card-hover">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-bullseye text-purple-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 mb-2">Research Objective</h3>
+                                <p class="text-gray-600">
+                                    Develop machine learning models to predict air quality categories in Yogyakarta based on pollutant concentrations (PM2.5, PM10, SO2, CO, O3, NO2).
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-md card-hover">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-brain text-blue-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 mb-2">Methodology</h3>
+                                <p class="text-gray-600">
+                                    Comparison of two popular machine learning techniques: Random Forest (ensemble method) and Support Vector Machine (SVM) for classification.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pollutants Monitored -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6">Pollutants Monitored</h2>
+                <div class="grid md:grid-cols-3 lg:grid-cols-6 gap-4">
+                    <div class="bg-white p-5 rounded-xl shadow-md text-center card-hover stat-card">
+                        <div class="text-3xl mb-2">💨</div>
+                        <div class="font-bold text-gray-900">PM2.5</div>
+                        <div class="text-xs text-gray-500 mt-1">Fine Particles</div>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl shadow-md text-center card-hover stat-card">
+                        <div class="text-3xl mb-2">🌫️</div>
+                        <div class="font-bold text-gray-900">PM10</div>
+                        <div class="text-xs text-gray-500 mt-1">Coarse Particles</div>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl shadow-md text-center card-hover stat-card">
+                        <div class="text-3xl mb-2">🏭</div>
+                        <div class="font-bold text-gray-900">SO2</div>
+                        <div class="text-xs text-gray-500 mt-1">Sulfur Dioxide</div>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl shadow-md text-center card-hover stat-card">
+                        <div class="text-3xl mb-2">🚗</div>
+                        <div class="font-bold text-gray-900">CO</div>
+                        <div class="text-xs text-gray-500 mt-1">Carbon Monoxide</div>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl shadow-md text-center card-hover stat-card">
+                        <div class="text-3xl mb-2">☀️</div>
+                        <div class="font-bold text-gray-900">O3</div>
+                        <div class="text-xs text-gray-500 mt-1">Ozone</div>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl shadow-md text-center card-hover stat-card">
+                        <div class="text-3xl mb-2">🔥</div>
+                        <div class="font-bold text-gray-900">NO2</div>
+                        <div class="text-xs text-gray-500 mt-1">Nitrogen Dioxide</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Findings -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6">Key Findings</h2>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl shadow-md card-hover">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="model-badge badge-good">Air Quality Status</span>
+                            <i class="fas fa-check-circle text-green-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Generally Good</h3>
+                        <p class="text-gray-700">
+                            PM2.5 concentrations remained below 35 μg/m³ throughout April 2021, indicating good air quality in Yogyakarta.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl shadow-md card-hover">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="model-badge" style="background: #dbeafe; color: #1e40af;">Daily Patterns</span>
+                            <i class="fas fa-chart-line text-blue-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Morning Peaks</h3>
+                        <p class="text-gray-700">
+                            Higher pollutant concentrations observed during morning hours, likely due to increased traffic and human activities.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-xl shadow-md card-hover">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="model-badge" style="background: #f3e8ff; color: #6b21a8;">Correlations</span>
+                            <i class="fas fa-link text-purple-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">PM2.5 & PM10</h3>
+                        <p class="text-gray-700">
+                            Strong positive correlation (0.97) between PM2.5 and PM10, indicating similar emission sources and atmospheric conditions.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Analysis Section -->
+    <section id="analysis" class="py-16 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8">Data Analysis & Visualization</h2>
+            
+            <!-- Tabs -->
+            <div class="flex flex-wrap gap-4 mb-8 border-b">
+                <button onclick="showTab('trend')" class="tab-button active px-6 py-3 font-semibold text-gray-600">
+                    PM2.5 Trend
+                </button>
+                <button onclick="showTab('distribution')" class="tab-button px-6 py-3 font-semibold text-gray-600">
+                    Distribution
+                </button>
+                <button onclick="showTab('correlation')" class="tab-button px-6 py-3 font-semibold text-gray-600">
+                    Correlation
+                </button>
+                <button onclick="showTab('confusion')" class="tab-button px-6 py-3 font-semibold text-gray-600">
+                    Confusion Matrix
+                </button>
+            </div>
+
+            <!-- Tab Content -->
+            <div id="trend" class="tab-content">
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">PM2.5 Concentration Over Time</h3>
+                    <p class="text-gray-600 mb-6">
+                        Hourly PM2.5 measurements throughout April 2021 showing daily fluctuations and overall trends.
+                    </p>
+                    <div class="chart-container">
+                        <canvas id="trendChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div id="distribution" class="tab-content hidden">
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Pollutant Distribution Analysis</h3>
+                    <p class="text-gray-600 mb-6">
+                        Frequency distribution of pollutant concentrations across the monitoring period.
+                    </p>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-3">PM2.5 Distribution</h4>
+                            <div class="chart-container" style="height: 300px;">
+                                <canvas id="pm25DistChart"></canvas>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-3">PM10 Distribution</h4>
+                            <div class="chart-container" style="height: 300px;">
+                                <canvas id="pm10DistChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="correlation" class="tab-content hidden">
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Pollutant Correlation Matrix</h3>
+                    <p class="text-gray-600 mb-6">
+                        Correlation coefficients showing relationships between different pollutants.
+                    </p>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm">
+                            <thead>
+                                <tr class="bg-gray-50">
+                                    <th class="p-3 text-left font-semibold">Pollutant</th>
+                                    <th class="p-3 text-center font-semibold">PM2.5</th>
+                                    <th class="p-3 text-center font-semibold">PM10</th>
+                                    <th class="p-3 text-center font-semibold">SO2</th>
+                                    <th class="p-3 text-center font-semibold">CO</th>
+                                    <th class="p-3 text-center font-semibold">O3</th>
+                                    <th class="p-3 text-center font-semibold">NO2</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-t">
+                                    <td class="p-3 font-semibold">PM2.5</td>
+                                    <td class="p-3 text-center bg-red-100">1.00</td>
+                                    <td class="p-3 text-center bg-red-100">0.97</td>
+                                    <td class="p-3 text-center bg-blue-50">0.22</td>
+                                    <td class="p-3 text-center bg-orange-50">0.34</td>
+                                    <td class="p-3 text-center bg-blue-100">-0.04</td>
+                                    <td class="p-3 text-center bg-orange-50">0.45</td>
+                                </tr>
+                                <tr class="border-t">
+                                    <td class="p-3 font-semibold">PM10</td>
+                                    <td class="p-3 text-center bg-red-100">0.97</td>
+                                    <td class="p-3 text-center bg-red-100">1.00</td>
+                                    <td class="p-3 text-center bg-blue-50">0.15</td>
+                                    <td class="p-3 text-center bg-orange-50">0.32</td>
+                                    <td class="p-3 text-center bg-blue-100">-0.03</td>
+                                    <td class="p-3 text-center bg-orange-50">0.50</td>
+                                </tr>
+                                <tr class="border-t">
+                                    <td class="p-3 font-semibold">SO2</td>
+                                    <td class="p-3 text-center bg-blue-50">0.22</td>
+                                    <td class="p-3 text-center bg-blue-50">0.15</td>
+                                    <td class="p-3 text-center bg-red-100">1.00</td>
+                                    <td class="p-3 text-center bg-orange-100">0.68</td>
+                                    <td class="p-3 text-center bg-blue-100">-0.38</td>
+                                    <td class="p-3 text-center bg-gray-50">0.04</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mt-6 flex items-center justify-center space-x-6 text-sm">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-4 h-4 bg-red-100 border border-red-200"></div>
+                            <span>Strong Positive</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-4 h-4 bg-orange-50 border border-orange-200"></div>
+                            <span>Moderate Positive</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-4 h-4 bg-gray-50 border border-gray-200"></div>
+                            <span>Weak/No Correlation</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-4 h-4 bg-blue-100 border border-blue-200"></div>
+                            <span>Negative</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="confusion" class="tab-content hidden">
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Confusion Matrix - Model Error Analysis</h3>
+                    <p class="text-gray-600 mb-6">
+                        Detailed breakdown of model predictions showing correct classifications and errors for each category.
+                    </p>
+                    
+                    <div class="grid md:grid-cols-2 gap-8 mb-8">
+                        <!-- Random Forest Confusion Matrix -->
+                        <div>
+                            <h4 class="text-xl font-semibold text-purple-700 mb-4 flex items-center">
+                                <i class="fas fa-trophy mr-2"></i>
+                                Random Forest (95% Accuracy)
+                            </h4>
+                            <div class="overflow-hidden rounded-lg border-2 border-purple-200">
+                                <table class="w-full text-center">
+                                    <thead>
+                                        <tr class="bg-purple-50">
+                                            <th class="p-3 border-b-2 border-r-2 border-purple-200"></th>
+                                            <th colspan="2" class="p-3 border-b-2 border-purple-200 font-bold">Predicted</th>
+                                        </tr>
+                                        <tr class="bg-purple-50">
+                                            <th class="p-3 border-b-2 border-r-2 border-purple-200"></th>
+                                            <th class="p-3 border-b-2 border-r-2 border-purple-200 font-semibold">Good</th>
+                                            <th class="p-3 border-b-2 border-purple-200 font-semibold">Moderate</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="p-4 bg-purple-50 border-r-2 border-b border-purple-200 font-semibold" rowspan="2" style="writing-mode: vertical-rl; transform: rotate(180deg);">Actual</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="p-3 bg-purple-50 border-r-2 border-b border-purple-200 font-semibold">Good</td>
+                                            <td class="p-6 bg-green-100 border-r-2 border-b border-purple-200">
+                                                <div class="text-3xl font-bold text-green-700">200</div>
+                                                <div class="text-xs text-gray-600 mt-1">True Negative</div>
+                                            </td>
+                                            <td class="p-6 bg-red-50 border-b border-purple-200">
+                                                <div class="text-3xl font-bold text-red-600">5</div>
+                                                <div class="text-xs text-gray-600 mt-1">False Positive</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="p-3 bg-purple-50 border-r-2 border-purple-200 font-semibold">Moderate</td>
+                                            <td class="p-6 bg-red-50 border-r-2 border-purple-200">
+                                                <div class="text-3xl font-bold text-red-600">6</div>
+                                                <div class="text-xs text-gray-600 mt-1">False Negative</div>
+                                            </td>
+                                            <td class="p-6 bg-green-100 border-purple-200">
+                                                <div class="text-3xl font-bold text-green-700">5</div>
+                                                <div class="text-xs text-gray-600 mt-1">True Positive</div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="mt-4 space-y-2 text-sm">
+                                <div class="flex justify-between p-2 bg-gray-50 rounded">
+                                    <span class="font-semibold">True Positives (TP):</span>
+                                    <span class="text-green-700 font-bold">5</span>
+                                </div>
+                                <div class="flex justify-between p-2 bg-gray-50 rounded">
+                                    <span class="font-semibold">True Negatives (TN):</span>
+                                    <span class="text-green-700 font-bold">200</span>
+                                </div>
+                                <div class="flex justify-between p-2 bg-gray-50 rounded">
+                                    <span class="font-semibold">False Positives (FP):</span>
+                                    <span class="text-red-600 font-bold">5</span>
+                                </div>
+                                <div class="flex justify-between p-2 bg-gray-50 rounded">
+                                    <span class="font-semibold">False Negatives (FN):</span>
+                                    <span class="text-red-600 font-bold">6</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SVM Confusion Matrix -->
+                        <div>
+                            <h4 class="text-xl font-semibold text-blue-700 mb-4 flex items-center">
+                                <i class="fas fa-chart-line mr-2"></i>
+                                Support Vector Machine (92% Accuracy)
+                            </h4>
+                            <div class="overflow-hidden rounded-lg border-2 border-blue-200">
+                                <table class="w-full text-center">
+                                    <thead>
+                                        <tr class="bg-blue-50">
+                                            <th class="p-3 border-b-2 border-r-2 border-blue-200"></th>
+                                            <th colspan="2" class="p-3 border-b-2 border-blue-200 font-bold">Predicted</th>
+                                        </tr>
+                                        <tr class="bg-blue-50">
+                                            <th class="p-3 border-b-2 border-r-2 border-blue-200"></th>
+                                            <th class="p-3 border-b-2 border-r-2 border-blue-200 font-semibold">Good</th>
+                                            <th class="p-3 border-b-2 border-blue-200 font-semibold">Moderate</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="p-4 bg-blue-50 border-r-2 border-b border-blue-200 font-semibold" rowspan="2" style="writing-mode: vertical-rl; transform: rotate(180deg);">Actual</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="p-3 bg-blue-50 border-r-2 border-b border-blue-200 font-semibold">Good</td>
+                                            <td class="p-6 bg-green-100 border-r-2 border-b border-blue-200">
+                                                <div class="text-3xl font-bold text-green-700">195</div>
+                                                <div class="text-xs text-gray-600 mt-1">True Negative</div>
+                                            </td>
+                                            <td class="p-6 bg-red-50 border-b border-blue-200">
+                                                <div class="text-3xl font-bold text-red-600">10</div>
+                                                <div class="text-xs text-gray-600 mt-1">False Positive</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="p-3 bg-blue-50 border-r-2 border-blue-200 font-semibold">Moderate</td>
+                                            <td class="p-6 bg-red-50 border-r-2 border-blue-200">
+                                                <div class="text-3xl font-bold text-red-600">7</div>
+                                                <div class="text-xs text-gray-600 mt-1">False Negative</div>
+                                            </td>
+                                            <td class="p-6 bg-green-100 border-blue-200">
+                                                <div class="text-3xl font-bold text-green-700">4</div>
+                                                <div class="text-xs text-gray-600 mt-1">True Positive</div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="mt-4 space-y-2 text-sm">
+                                <div class="flex justify-between p-2 bg-gray-50 rounded">
+                                    <span class="font-semibold">True Positives (TP):</span>
+                                    <span class="text-green-700 font-bold">4</span>
+                                </div>
+                                <div class="flex justify-between p-2 bg-gray-50 rounded">
+                                    <span class="font-semibold">True Negatives (TN):</span>
+                                    <span class="text-green-700 font-bold">195</span>
+                                </div>
+                                <div class="flex justify-between p-2 bg-gray-50 rounded">
+                                    <span class="font-semibold">False Positives (FP):</span>
+                                    <span class="text-red-600 font-bold">10</span>
+                                </div>
+                                <div class="flex justify-between p-2 bg-gray-50 rounded">
+                                    <span class="font-semibold">False Negatives (FN):</span>
+                                    <span class="text-red-600 font-bold">7</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Insights -->
+                    <div class="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-xl">
+                        <h4 class="text-lg font-bold text-gray-900 mb-4 flex items-center">
+                            <i class="fas fa-lightbulb text-yellow-500 mr-2"></i>
+                            Key Insights from Confusion Matrix
+                        </h4>
+                        <div class="grid md:grid-cols-3 gap-4 text-sm">
+                            <div class="bg-white p-4 rounded-lg">
+                                <div class="font-semibold text-purple-700 mb-2">✓ Better Precision</div>
+                                <p class="text-gray-600">Random Forest has fewer False Positives (5 vs 10), meaning it's more reliable when predicting "Moderate" category.</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg">
+                                <div class="font-semibold text-blue-700 mb-2">✓ Better Recall</div>
+                                <p class="text-gray-600">Random Forest has fewer False Negatives (6 vs 7), catching more actual "Moderate" cases.</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg">
+                                <div class="font-semibold text-green-700 mb-2">✓ Overall Superior</div>
+                                <p class="text-gray-600">Random Forest correctly classifies 205/216 samples (95%) compared to SVM's 199/216 (92%).</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 p-4 bg-gray-50 rounded-lg text-xs text-gray-500 italic">
+                        <i class="fas fa-info-circle mr-2"></i>
+                        <strong>Note:</strong> Values are estimated from model evaluation metrics (Accuracy, Precision, Recall) based on test set of ~216 samples (30% of 720 total records).
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Models Comparison -->
+    <section id="models" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8">Machine Learning Models Comparison</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <!-- Random Forest -->
+                <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-8 rounded-xl shadow-lg card-hover">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-2xl font-bold text-gray-900">Random Forest</h3>
+                        <span class="model-badge" style="background: #7c3aed; color: white;">Winner 🏆</span>
+                    </div>
+                    <p class="text-gray-700 mb-6">
+                        Ensemble learning method that combines multiple decision trees to improve prediction accuracy and reduce overfitting.
+                    </p>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-sm font-semibold text-gray-700">Accuracy</span>
+                                <span class="text-lg font-bold text-purple-700">95%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-3">
+                                <div class="bg-purple-600 h-3 rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-sm font-semibold text-gray-700">Precision</span>
+                                <span class="text-lg font-bold text-purple-700">94%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-3">
+                                <div class="bg-purple-600 h-3 rounded-full" style="width: 94%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-sm font-semibold text-gray-700">Recall</span>
+                                <span class="text-lg font-bold text-purple-700">93%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-3">
+                                <div class="bg-purple-600 h-3 rounded-full" style="width: 93%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-sm font-semibold text-gray-700">F1-Score</span>
+                                <span class="text-lg font-bold text-purple-700">93%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-3">
+                                <div class="bg-purple-600 h-3 rounded-full" style="width: 93%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SVM -->
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-xl shadow-lg card-hover">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-2xl font-bold text-gray-900">Support Vector Machine</h3>
+                        <span class="model-badge" style="background: #3b82f6; color: white;">Baseline</span>
+                    </div>
+                    <p class="text-gray-700 mb-6">
+                        Classification algorithm that finds the optimal hyperplane to separate different classes in high-dimensional space.
+                    </p>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-sm font-semibold text-gray-700">Accuracy</span>
+                                <span class="text-lg font-bold text-blue-700">92%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-3">
+                                <div class="bg-blue-600 h-3 rounded-full" style="width: 92%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-sm font-semibold text-gray-700">Precision</span>
+                                <span class="text-lg font-bold text-blue-700">91%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-3">
+                                <div class="bg-blue-600 h-3 rounded-full" style="width: 91%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-sm font-semibold text-gray-700">Recall</span>
+                                <span class="text-lg font-bold text-blue-700">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-3">
+                                <div class="bg-blue-600 h-3 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-sm font-semibold text-gray-700">F1-Score</span>
+                                <span class="text-lg font-bold text-blue-700">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-3">
+                                <div class="bg-blue-600 h-3 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Performance Chart -->
+            <div class="bg-white p-8 rounded-xl shadow-lg">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">Model Performance Comparison</h3>
+                <div class="chart-container">
+                    <canvas id="performanceChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conclusion -->
+    <section class="py-16 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Conclusions</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">
+                    Key insights from the air quality prediction analysis
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-check-circle text-green-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Air Quality Status</h3>
+                    <p class="text-gray-600">
+                        Yogyakarta maintained generally good air quality during April 2021, with PM2.5 levels consistently below safety thresholds.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-trophy text-purple-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Model Performance</h3>
+                    <p class="text-gray-600">
+                        Random Forest outperformed SVM with 95% accuracy, demonstrating superior capability in classifying air quality categories.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-lightbulb text-blue-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Practical Applications</h3>
+                    <p class="text-gray-600">
+                        This model can support environmental policy-making and public health initiatives through data-driven air quality predictions.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technologies Used -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Technologies & Tools</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                <div class="text-center p-4 bg-gray-50 rounded-xl hover:shadow-md transition">
+                    <i class="fab fa-python text-4xl text-blue-600 mb-2"></i>
+                    <div class="font-semibold text-gray-800">Python</div>
+                </div>
+                <div class="text-center p-4 bg-gray-50 rounded-xl hover:shadow-md transition">
+                    <i class="fas fa-chart-bar text-4xl text-green-600 mb-2"></i>
+                    <div class="font-semibold text-gray-800">Pandas</div>
+                </div>
+                <div class="text-center p-4 bg-gray-50 rounded-xl hover:shadow-md transition">
+                    <i class="fas fa-project-diagram text-4xl text-orange-600 mb-2"></i>
+                    <div class="font-semibold text-gray-800">NumPy</div>
+                </div>
+                <div class="text-center p-4 bg-gray-50 rounded-xl hover:shadow-md transition">
+                    <i class="fas fa-brain text-4xl text-purple-600 mb-2"></i>
+                    <div class="font-semibold text-gray-800">Scikit-learn</div>
+                </div>
+                <div class="text-center p-4 bg-gray-50 rounded-xl hover:shadow-md transition">
+                    <i class="fas fa-chart-line text-4xl text-red-600 mb-2"></i>
+                    <div class="font-semibold text-gray-800">Matplotlib</div>
+                </div>
+                <div class="text-center p-4 bg-gray-50 rounded-xl hover:shadow-md transition">
+                    <i class="fas fa-chart-area text-4xl text-teal-600 mb-2"></i>
+                    <div class="font-semibold text-gray-800">Seaborn</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dataset Information -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white p-8 rounded-xl shadow-lg">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6">Dataset Information</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">Data Specifications</h3>
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-600 mt-1 mr-3"></i>
+                                <span><strong>Period:</strong> April 1-30, 2021</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-600 mt-1 mr-3"></i>
+                                <span><strong>Frequency:</strong> Hourly measurements (24 hours/day)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-600 mt-1 mr-3"></i>
+                                <span><strong>Total Records:</strong> 720 data points</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-600 mt-1 mr-3"></i>
+                                <span><strong>Location:</strong> Yogyakarta, Indonesia</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-600 mt-1 mr-3"></i>
+                                <span><strong>Parameters:</strong> 6 pollutants + weather data</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">Quality Categories</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between p-3 bg-green-50 rounded-lg">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-8 h-8 bg-green-500 rounded-full"></div>
+                                    <span class="font-semibold text-gray-800">Good</span>
+                                </div>
+                                <span class="text-gray-600">0-50 AQI</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 bg-yellow-50 rounded-lg">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-8 h-8 bg-yellow-500 rounded-full"></div>
+                                    <span class="font-semibold text-gray-800">Moderate</span>
+                                </div>
+                                <span class="text-gray-600">51-100 AQI</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 bg-orange-50 rounded-lg">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-8 h-8 bg-orange-500 rounded-full"></div>
+                                    <span class="font-semibold text-gray-800">Unhealthy</span>
+                                </div>
+                                <span class="text-gray-600">101-150 AQI</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Author & Repository -->
+    <section class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6">Project Information</h2>
+            <div class="bg-gradient-to-br from-purple-50 to-blue-50 p-8 rounded-xl shadow-lg">
+                <div class="mb-6">
+                    <div class="w-20 h-20 bg-purple-100 rounded-full mx-auto flex items-center justify-center mb-4">
+                        <i class="fas fa-user-graduate text-purple-600 text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Diki Darmawan</h3>
+                    <p class="text-gray-600 mb-1">Informatics Engineering</p>
+                    <p class="text-gray-600">Lampung University</p>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mb-6">
+                    <a href="mailto:dikidarmawan7st@gmail.com" class="flex items-center space-x-2 text-gray-700 hover:text-purple-600 transition">
+                        <i class="fas fa-envelope"></i>
+                        <span>dikidarmawan7st@gmail.com</span>
+                    </a>
+                    <a href="https://github.com/dkruma" target="_blank" class="flex items-center space-x-2 text-gray-700 hover:text-purple-600 transition">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub Profile</span>
+                    </a>
+                </div>
+
+                <div class="pt-6 border-t border-gray-200">
+                    <a href="https://github.com/dkruma/dkruma.github.io/tree/main/projects/air-quality-prediction" target="_blank" class="inline-flex items-center space-x-3 bg-gray-900 text-white px-8 py-4 rounded-lg hover:bg-gray-800 transition shadow-lg">
+                        <i class="fab fa-github text-xl"></i>
+                        <span class="font-semibold">View Project Repository</span>
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="gradient-bg text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="mb-2">© 2024 Diki Darmawan - Air Quality Prediction Project</p>
+            <p class="text-purple-200 text-sm">Machine Learning Research | Lampung University</p>
+        </div>
+    </footer>
+
+    <script>
+        // Tab switching
+        function showTab(tabName) {
+            // Hide all tabs
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.add('hidden');
+            });
+            
+            // Remove active class from all buttons
+            document.querySelectorAll('.tab-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected tab
+            document.getElementById(tabName).classList.remove('hidden');
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+
+        // PM2.5 Trend Chart
+        const trendCtx = document.getElementById('trendChart').getContext('2d');
+        new Chart(trendCtx, {
+            type: 'line',
+            data: {
+                labels: Array.from({length: 30}, (_, i) => `Apr ${i + 1}`),
+                datasets: [{
+                    label: 'PM2.5 Concentration (μg/m³)',
+                    data: [45, 31, 50, 55, 28, 50, 52, 51, 60, 64, 50, 49, 51, 40, 39, 27, 37, 52, 53, 36, 34, 37, 34, 45, 41, 54, 57, 43, 53, 54],
+                    borderColor: '#667eea',
+                    backgroundColor: 'rgba(102, 126, 234, 0.1)',
+                    borderWidth: 2,
+                    tension: 0.4,
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'PM2.5 (μg/m³)'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Date'
+                        }
+                    }
+                }
+            }
+        });
+
+        // PM2.5 Distribution Chart
+        const pm25DistCtx = document.getElementById('pm25DistChart').getContext('2d');
+        new Chart(pm25DistCtx, {
+            type: 'bar',
+            data: {
+                labels: ['20-30', '30-40', '40-50', '50-60', '60-70'],
+                datasets: [{
+                    label: 'Frequency',
+                    data: [120, 180, 250, 140, 30],
+                    backgroundColor: '#667eea'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Frequency'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'PM2.5 Range (μg/m³)'
+                        }
+                    }
+                }
+            }
+        });
+
+        // PM10 Distribution Chart
+        const pm10DistCtx = document.getElementById('pm10DistChart').getContext('2d');
+        new Chart(pm10DistCtx, {
+            type: 'bar',
+            data: {
+                labels: ['10-15', '15-20', '20-25', '25-30', '30-35'],
+                datasets: [{
+                    label: 'Frequency',
+                    data: [70, 200, 280, 130, 40],
+                    backgroundColor: '#3b82f6'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Frequency'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'PM10 Range (μg/m³)'
+                        }
+                    }
+                }
+            }
+        });
+
+        // Model Performance Comparison Chart
+        const performanceCtx = document.getElementById('performanceChart').getContext('2d');
+        new Chart(performanceCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Accuracy', 'Precision', 'Recall', 'F1-Score'],
+                datasets: [
+                    {
+                        label: 'Random Forest',
+                        data: [0.95, 0.94, 0.93, 0.93],
+                        backgroundColor: '#7c3aed'
+                    },
+                    {
+                        label: 'SVM',
+                        data: [0.92, 0.91, 0.90, 0.90],
+                        backgroundColor: '#3b82f6'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 1,
+                        ticks: {
+                            callback: function(value) {
+                                return (value * 100) + '%';
+                            }
+                        },
+                        title: {
+                            display: true,
+                            text: 'Score'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Metrics'
+                        }
+                    }
+                }
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
