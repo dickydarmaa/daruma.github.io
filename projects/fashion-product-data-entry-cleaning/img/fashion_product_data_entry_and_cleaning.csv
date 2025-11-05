@@ -1,0 +1,101 @@
+Product ID,Product Name,Category,Size,Color,Price (USD),Stock Status,Supplier,Description
+PRD001,Hoodie Basic Unisex,Hoodie,S,Navy,25.35,Out of Stock,TrendyLine,Hoodie made from high-quality materials suitable for everyday casual wear.
+PRD002,T-Shirt Basic Men,T-Shirt,M,Black,71.74,Out of Stock,TrendyLine,T-Shirt made from high-quality materials suitable for everyday casual wear.
+PRD003,Cap Basic Men,Cap,XL,Blue,40.57,In Stock,CasualHub,Cap made from high-quality materials suitable for everyday casual wear.
+PRD004,Jacket Classic Unisex,Jacket,L,Black,90.27,Out of Stock,DenimWave,Jacket made from high-quality materials suitable for everyday casual wear.
+PRD005,Jeans Basic Men,Jeans,XL,Red,118.37,Out of Stock,UrbanWear Co,Jeans made from high-quality materials suitable for everyday casual wear.
+PRD006,Sneakers Classic Women,Sneakers,M,Red,87.2,In Stock,UrbanWear Co,Sneakers made from high-quality materials suitable for everyday casual wear.
+PRD007,Sneakers Limited Women,Sneakers,S,Navy,85.31,Out of Stock,UrbanWear Co,Sneakers made from high-quality materials suitable for everyday casual wear.
+PRD008,Shorts Classic Men,Shorts,L,Blue,33.39,In Stock,TrendyLine,Shorts made from high-quality materials suitable for everyday casual wear.
+PRD009,Jeans Classic Unisex,Jeans,S,Green,49.82,In Stock,StreetX,Jeans made from high-quality materials suitable for everyday casual wear.
+PRD010,Hoodie Premium Unisex,Hoodie,L,Green,75.6,In Stock,CityStyle,Hoodie made from high-quality materials suitable for everyday casual wear.
+PRD011,Hoodie Classic Unisex,Hoodie,L,Red,57.82,In Stock,TrendyLine,Hoodie made from high-quality materials suitable for everyday casual wear.
+PRD012,Hoodie Classic Unisex,Hoodie,S,Navy,26.81,Out of Stock,CityStyle,Hoodie made from high-quality materials suitable for everyday casual wear.
+PRD013,Sweatshirt Basic Men,Sweatshirt,S,Red,36.34,Out of Stock,CityStyle,Sweatshirt made from high-quality materials suitable for everyday casual wear.
+PRD014,Hoodie Premium Men,Hoodie,M,Gray,39.16,Out of Stock,DenimWave,Hoodie made from high-quality materials suitable for everyday casual wear.
+PRD015,Shorts Classic Women,Shorts,M,Beige,23.31,In Stock,N/A,Shorts made from high-quality materials suitable for everyday casual wear.
+PRD016,T-Shirt Basic Unisex,T-Shirt,M,Navy,68.38,Out of Stock,CasualHub,T-Shirt made from high-quality materials suitable for everyday casual wear.
+PRD017,Sweatshirt Premium Unisex,Sweatshirt,S,Beige,36.73,Out of Stock,DenimWave,Sweatshirt made from high-quality materials suitable for everyday casual wear.
+PRD018,Jacket Limited Women,Jacket,L,Black,84.07,In Stock,UrbanWear Co,Jacket made from high-quality materials suitable for everyday casual wear.
+PRD019,Jeans Premium Men,Jeans,S,Gray,56.41,Out of Stock,StreetX,Jeans made from high-quality materials suitable for everyday casual wear.
+PRD020,Hoodie Basic Unisex,Hoodie,XL,Black,116.59,Out of Stock,StreetX,Hoodie made from high-quality materials suitable for everyday casual wear.
+PRD021,Jeans Limited Men,Jeans,XL,Black,118.38,In Stock,DenimWave,Jeans made from high-quality materials suitable for everyday casual wear.
+PRD022,Jeans Classic Men,Jeans,M,Black,68.38,In Stock,CityStyle,Jeans made from high-quality materials suitable for everyday casual wear.
+PRD023,Hoodie Premium Men,Hoodie,S,Navy,54.42,In Stock,CityStyle,Hoodie made from high-quality materials suitable for everyday casual wear.
+PRD024,Shorts Classic Women,Shorts,XL,Blue,36.26,Out of Stock,TrendyLine,Shorts made from high-quality materials suitable for everyday casual wear.
+PRD025,Hoodie Basic Women,Hoodie,L,White,18.06,In Stock,CasualHub,Hoodie made from high-quality materials suitable for everyday casual wear.
+PRD026,Jeans Classic Women,Jeans,L,Red,77.28,In Stock,TrendyLine,Jeans made from high-quality materials suitable for everyday casual wear.
+PRD027,Sneakers Classic Men,Sneakers,L,Gray,39.96,Out of Stock,TrendyLine,Sneakers made from high-quality materials suitable for everyday casual wear.
+PRD028,Cap Basic Men,Cap,L,Red,14.85,In Stock,StreetX,Cap made from high-quality materials suitable for everyday casual wear.
+PRD029,Sweatshirt Limited Unisex,Sweatshirt,L,White,113.96,In Stock,StreetX,Sweatshirt made from high-quality materials suitable for everyday casual wear.
+PRD030,Shorts Premium Men,Shorts,L,Black,108.88,Out of Stock,StreetX,Shorts made from high-quality materials suitable for everyday casual wear.
+PRD031,Sneakers Premium Men,Sneakers,XL,Gray,68.38,In Stock,TrendyLine,Sneakers made from high-quality materials suitable for everyday casual wear.
+PRD032,Cap Premium Unisex,Cap,M,Black,104.45,In Stock,DenimWave,Cap made from high-quality materials suitable for everyday casual wear.
+PRD033,T-Shirt Premium Women,T-Shirt,L,White,116.36,In Stock,TrendyLine,T-Shirt made from high-quality materials suitable for everyday casual wear.
+PRD034,Hoodie Classic Men,Hoodie,L,Red,14.21,Out of Stock,CasualHub,Hoodie made from high-quality materials suitable for everyday casual wear.
+PRD035,Hoodie Limited Unisex,Hoodie,M,Black,68.38,Out of Stock,CityStyle,Hoodie made from high-quality materials suitable for everyday casual wear.
+PRD036,Shorts Basic Unisex,Shorts,XL,Blue,82.97,Out of Stock,CasualHub,Shorts made from high-quality materials suitable for everyday casual wear.
+PRD037,Shorts Classic Unisex,Shorts,L,Green,83.14,Out of Stock,TrendyLine,Shorts made from high-quality materials suitable for everyday casual wear.
+PRD038,T-Shirt Classic Women,T-Shirt,M,Blue,61.15,In Stock,StreetX,T-Shirt made from high-quality materials suitable for everyday casual wear.
+PRD039,Cap Classic Men,Cap,S,Navy,84.01,In Stock,StreetX,Cap made from high-quality materials suitable for everyday casual wear.
+PRD040,Sweatshirt Basic Women,Sweatshirt,S,Navy,89.02,In Stock,DenimWave,Sweatshirt made from high-quality materials suitable for everyday casual wear.
+PRD041,Shorts Premium Men,Shorts,XL,Beige,15.52,Out of Stock,UrbanWear Co,Shorts made from high-quality materials suitable for everyday casual wear.
+PRD042,Sweatshirt Limited Unisex,Sweatshirt,L,Gray,91.8,Out of Stock,CasualHub,Sweatshirt made from high-quality materials suitable for everyday casual wear.
+PRD043,Jeans Classic Women,Jeans,M,Red,35.79,In Stock,CityStyle,Jeans made from high-quality materials suitable for everyday casual wear.
+PRD044,Shorts Premium Unisex,Shorts,XL,Green,54.84,Out of Stock,DenimWave,Shorts made from high-quality materials suitable for everyday casual wear.
+PRD045,T-Shirt Limited Women,T-Shirt,M,Blue,42.85,Out of Stock,DenimWave,T-Shirt made from high-quality materials suitable for everyday casual wear.
+PRD046,Jeans Classic Women,Jeans,XL,Green,46.97,In Stock,DenimWave,Jeans made from high-quality materials suitable for everyday casual wear.
+PRD047,T-Shirt Limited Unisex,T-Shirt,L,Black,19.23,Out of Stock,DenimWave,T-Shirt made from high-quality materials suitable for everyday casual wear.
+PRD048,Jacket Premium Women,Jacket,S,Green,40.61,Out of Stock,DenimWave,Jacket made from high-quality materials suitable for everyday casual wear.
+PRD049,T-Shirt Basic Women,T-Shirt,M,White,95.94,In Stock,UrbanWear Co,T-Shirt made from high-quality materials suitable for everyday casual wear.
+PRD050,Sneakers Premium Men,Sneakers,L,White,72.04,In Stock,TrendyLine,Sneakers made from high-quality materials suitable for everyday casual wear.
+PRD051,Hoodie Premium Women,Hoodie,M,Black,112.18,In Stock,DenimWave,Hoodie made from high-quality materials suitable for everyday casual wear.
+PRD052,Jeans Basic Unisex,Jeans,XL,White,97.58,Out of Stock,UrbanWear Co,Jeans made from high-quality materials suitable for everyday casual wear.
+PRD053,Hoodie Classic Men,Hoodie,XL,Beige,21.61,In Stock,TrendyLine,Hoodie made from high-quality materials suitable for everyday casual wear.
+PRD054,Shorts Premium Unisex,Shorts,L,Red,77.75,Out of Stock,DenimWave,Shorts made from high-quality materials suitable for everyday casual wear.
+PRD055,Jeans Basic Women,Jeans,S,Navy,92.55,Out of Stock,TrendyLine,Jeans made from high-quality materials suitable for everyday casual wear.
+PRD056,Jacket Premium Women,Jacket,S,Red,47.44,In Stock,TrendyLine,Jacket made from high-quality materials suitable for everyday casual wear.
+PRD057,Hoodie Premium Unisex,Hoodie,S,Navy,85.97,In Stock,DenimWave,Hoodie made from high-quality materials suitable for everyday casual wear.
+PRD058,Cap Premium Women,Cap,XL,Red,83.04,Out of Stock,CityStyle,Cap made from high-quality materials suitable for everyday casual wear.
+PRD059,Jacket Limited Women,Jacket,M,Navy,23.27,In Stock,UrbanWear Co,Jacket made from high-quality materials suitable for everyday casual wear.
+PRD060,Jeans Limited Women,Jeans,M,Red,117.86,Out of Stock,CasualHub,Jeans made from high-quality materials suitable for everyday casual wear.
+PRD061,T-Shirt Premium Women,T-Shirt,XL,Black,70.87,In Stock,StreetX,T-Shirt made from high-quality materials suitable for everyday casual wear.
+PRD062,T-Shirt Classic Women,T-Shirt,S,Blue,68.38,Out of Stock,DenimWave,T-Shirt made from high-quality materials suitable for everyday casual wear.
+PRD063,Sweatshirt Basic Unisex,Sweatshirt,M,Black,26.69,In Stock,CasualHub,Sweatshirt made from high-quality materials suitable for everyday casual wear.
+PRD064,Shorts Premium Unisex,Shorts,S,Beige,42.71,In Stock,DenimWave,Shorts made from high-quality materials suitable for everyday casual wear.
+PRD065,Jeans Premium Women,Jeans,XL,Gray,36.39,Out of Stock,N/A,Jeans made from high-quality materials suitable for everyday casual wear.
+PRD066,Cap Basic Men,Cap,L,Red,87.33,In Stock,TrendyLine,Cap made from high-quality materials suitable for everyday casual wear.
+PRD067,Shorts Basic Unisex,Shorts,L,Gray,109.93,Out of Stock,UrbanWear Co,Shorts made from high-quality materials suitable for everyday casual wear.
+PRD068,Sweatshirt Basic Women,Sweatshirt,S,Green,113.69,Out of Stock,DenimWave,Sweatshirt made from high-quality materials suitable for everyday casual wear.
+PRD069,Jacket Classic Men,Jacket,M,Black,119.95,Out of Stock,CasualHub,Jacket made from high-quality materials suitable for everyday casual wear.
+PRD070,Sweatshirt Classic Men,Sweatshirt,XL,Green,79.83,Out of Stock,UrbanWear Co,Sweatshirt made from high-quality materials suitable for everyday casual wear.
+PRD071,Jacket Basic Men,Jacket,S,Beige,41.7,Out of Stock,N/A,Jacket made from high-quality materials suitable for everyday casual wear.
+PRD072,Cap Classic Men,Cap,XL,Green,105.14,Out of Stock,UrbanWear Co,Cap made from high-quality materials suitable for everyday casual wear.
+PRD073,T-Shirt Premium Unisex,T-Shirt,M,Beige,78.79,Out of Stock,StreetX,T-Shirt made from high-quality materials suitable for everyday casual wear.
+PRD074,Sweatshirt Limited Men,Sweatshirt,S,Navy,88.08,In Stock,UrbanWear Co,Sweatshirt made from high-quality materials suitable for everyday casual wear.
+PRD075,Hoodie Limited Men,Hoodie,XL,Gray,64.82,Out of Stock,CityStyle,Hoodie made from high-quality materials suitable for everyday casual wear.
+PRD076,Sweatshirt Premium Women,Sweatshirt,S,Green,30.97,Out of Stock,TrendyLine,Sweatshirt made from high-quality materials suitable for everyday casual wear.
+PRD077,Shorts Classic Unisex,Shorts,XL,Black,41.11,In Stock,CityStyle,Shorts made from high-quality materials suitable for everyday casual wear.
+PRD078,Sweatshirt Limited Women,Sweatshirt,M,Green,60.09,Out of Stock,StreetX,Sweatshirt made from high-quality materials suitable for everyday casual wear.
+PRD079,Jeans Limited Men,Jeans,M,Beige,87.58,Out of Stock,DenimWave,Jeans made from high-quality materials suitable for everyday casual wear.
+PRD080,T-Shirt Premium Unisex,T-Shirt,XL,Blue,105.67,In Stock,DenimWave,T-Shirt made from high-quality materials suitable for everyday casual wear.
+PRD081,Sneakers Limited Unisex,Sneakers,XL,White,61.64,In Stock,CasualHub,Sneakers made from high-quality materials suitable for everyday casual wear.
+PRD082,Jacket Limited Women,Jacket,L,Beige,68.38,In Stock,UrbanWear Co,Jacket made from high-quality materials suitable for everyday casual wear.
+PRD083,Hoodie Limited Men,Hoodie,S,White,58.8,Out of Stock,N/A,Hoodie made from high-quality materials suitable for everyday casual wear.
+PRD084,Jacket Classic Women,Jacket,XL,Green,72.25,In Stock,StreetX,Jacket made from high-quality materials suitable for everyday casual wear.
+PRD085,Sweatshirt Premium Men,Sweatshirt,M,Red,60.55,In Stock,DenimWave,Sweatshirt made from high-quality materials suitable for everyday casual wear.
+PRD086,Sweatshirt Classic Unisex,Sweatshirt,XL,Green,85.93,Out of Stock,CasualHub,Sweatshirt made from high-quality materials suitable for everyday casual wear.
+PRD087,Hoodie Premium Women,Hoodie,S,Red,119.2,In Stock,TrendyLine,Hoodie made from high-quality materials suitable for everyday casual wear.
+PRD088,Sweatshirt Classic Men,Sweatshirt,M,Blue,34.09,In Stock,CasualHub,Sweatshirt made from high-quality materials suitable for everyday casual wear.
+PRD089,T-Shirt Classic Women,T-Shirt,XL,Blue,68.38,In Stock,CasualHub,T-Shirt made from high-quality materials suitable for everyday casual wear.
+PRD090,Jeans Premium Unisex,Jeans,XL,Blue,68.39,Out of Stock,StreetX,Jeans made from high-quality materials suitable for everyday casual wear.
+PRD091,Jacket Basic Women,Jacket,XL,Gray,92.96,Out of Stock,TrendyLine,Jacket made from high-quality materials suitable for everyday casual wear.
+PRD092,Hoodie Limited Men,Hoodie,XL,White,60.03,Out of Stock,TrendyLine,Hoodie made from high-quality materials suitable for everyday casual wear.
+PRD093,Hoodie Premium Women,Hoodie,XL,Blue,110.68,Out of Stock,UrbanWear Co,Hoodie made from high-quality materials suitable for everyday casual wear.
+PRD094,Shorts Basic Men,Shorts,M,Black,43.48,Out of Stock,UrbanWear Co,Shorts made from high-quality materials suitable for everyday casual wear.
+PRD095,Sweatshirt Classic Unisex,Sweatshirt,XL,Green,74.61,Out of Stock,DenimWave,Sweatshirt made from high-quality materials suitable for everyday casual wear.
+PRD096,Cap Basic Unisex,Cap,L,Beige,58.92,Out of Stock,CasualHub,Cap made from high-quality materials suitable for everyday casual wear.
+PRD097,T-Shirt Limited Women,T-Shirt,S,White,114.39,In Stock,UrbanWear Co,T-Shirt made from high-quality materials suitable for everyday casual wear.
+PRD098,Jacket Premium Men,Jacket,M,Navy,17.55,Out of Stock,StreetX,Jacket made from high-quality materials suitable for everyday casual wear.
+PRD099,Sneakers Basic Women,Sneakers,S,Gray,118.63,In Stock,StreetX,Sneakers made from high-quality materials suitable for everyday casual wear.
+PRD100,T-Shirt Classic Men,T-Shirt,S,Black,68.38,In Stock,TrendyLine,T-Shirt made from high-quality materials suitable for everyday casual wear.
