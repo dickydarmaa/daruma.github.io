@@ -13,1099 +13,532 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: #f3f4f6;
-            color: #1f2937;
-            line-height: 1.5;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
         }
 
         .header {
-            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
-            color: white;
-            padding: 24px 20px;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
         .header h1 {
-            font-size: 28px;
-            font-weight: 700;
+            color: #667eea;
+            font-size: 32px;
             margin-bottom: 8px;
         }
 
         .header p {
-            color: #bfdbfe;
+            color: #666;
             font-size: 14px;
-        }
-
-        .header-stats {
-            display: flex;
-            gap: 12px;
-            margin-top: 16px;
-            flex-wrap: wrap;
-        }
-
-        .header-badge {
-            background: rgba(255,255,255,0.2);
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 13px;
-            backdrop-filter: blur(10px);
-        }
-
-        .nav-tabs {
-            background: white;
-            border-bottom: 1px solid #e5e7eb;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-        }
-
-        .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            gap: 4px;
-            padding: 0 20px;
-        }
-
-        .tab-btn {
-            padding: 16px 24px;
-            border: none;
-            background: none;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: 500;
-            color: #6b7280;
-            border-bottom: 2px solid transparent;
-            transition: all 0.3s;
-        }
-
-        .tab-btn:hover {
-            color: #1f2937;
-        }
-
-        .tab-btn.active {
-            color: #2563eb;
-            border-bottom-color: #2563eb;
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 24px 20px;
-        }
-
-        .tab-content {
-            display: none;
-        }
-
-        .tab-content.active {
-            display: block;
         }
 
         .kpi-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 16px;
-            margin-bottom: 24px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
         }
 
         .kpi-card {
             background: white;
-            border-radius: 12px;
             padding: 20px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-            border: 1px solid #e5e7eb;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .kpi-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100px;
-            height: 100px;
-            opacity: 0.1;
-            border-radius: 50%;
-        }
-
-        .kpi-card.blue::before { background: #2563eb; }
-        .kpi-card.purple::before { background: #7c3aed; }
-        .kpi-card.pink::before { background: #ec4899; }
-        .kpi-card.green::before { background: #10b981; }
-
-        .kpi-icon {
-            width: 48px;
-            height: 48px;
             border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 12px;
-            font-size: 24px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-left: 4px solid #667eea;
         }
 
-        .kpi-card.blue .kpi-icon { background: #dbeafe; }
-        .kpi-card.purple .kpi-icon { background: #ede9fe; }
-        .kpi-card.pink .kpi-icon { background: #fce7f3; }
-        .kpi-card.green .kpi-icon { background: #d1fae5; }
-
-        .kpi-label {
+        .kpi-card h3 {
             font-size: 13px;
-            color: #6b7280;
-            font-weight: 500;
-            margin-bottom: 4px;
+            color: #666;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
-        .kpi-value {
-            font-size: 32px;
-            font-weight: 700;
-            margin-bottom: 4px;
+        .kpi-card .value {
+            font-size: 28px;
+            font-weight: bold;
+            color: #667eea;
         }
 
-        .kpi-subtitle {
+        .kpi-card .subtext {
             font-size: 12px;
-            color: #9ca3af;
+            color: #999;
+            margin-top: 5px;
         }
 
-        .kpi-trend {
-            display: flex;
-            align-items: center;
-            gap: 4px;
-            margin-top: 8px;
-            font-size: 13px;
-            color: #10b981;
-            font-weight: 500;
-        }
-
-        .chart-grid {
+        .dashboard-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-            gap: 20px;
-            margin-bottom: 24px;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 15px;
         }
 
         .chart-card {
             background: white;
-            border-radius: 12px;
-            padding: 24px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-            border: 1px solid #e5e7eb;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
-        .chart-card.full-width {
-            grid-column: 1 / -1;
-        }
-
-        .chart-title {
+        .chart-card h2 {
             font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            color: #333;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
         }
 
-        .chart-icon {
-            font-size: 20px;
+        .full-width {
+            grid-column: span 12;
         }
 
-        .location-list {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
+        .half-width {
+            grid-column: span 6;
         }
 
-        .location-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
+        .third-width {
+            grid-column: span 4;
         }
 
-        .location-name {
-            width: 120px;
-            font-weight: 500;
-            font-size: 14px;
+        .two-third {
+            grid-column: span 8;
         }
 
-        .location-bar-container {
-            flex: 1;
-            height: 32px;
-            background: #f3f4f6;
+        canvas {
+            max-height: 300px;
+        }
+
+        .insight-box {
+            background: #f8f9ff;
+            padding: 15px;
             border-radius: 8px;
-            overflow: hidden;
-            position: relative;
+            margin-top: 15px;
+            border-left: 4px solid #667eea;
         }
 
-        .location-bar {
-            height: 100%;
-            background: linear-gradient(90deg, #2563eb, #7c3aed);
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            padding-right: 12px;
-            color: white;
-            font-weight: 600;
-            font-size: 13px;
-            transition: width 1s ease;
-        }
-
-        .location-value {
-            width: 100px;
-            text-align: right;
-            font-weight: 600;
+        .insight-box h4 {
+            color: #667eea;
             font-size: 14px;
-        }
-
-        .table-container {
-            overflow-x: auto;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        th {
-            background: #f9fafb;
-            padding: 12px 16px;
-            text-align: left;
-            font-size: 13px;
-            font-weight: 600;
-            color: #374151;
-            border-bottom: 2px solid #e5e7eb;
-        }
-
-        th.text-right, td.text-right {
-            text-align: right;
-        }
-
-        td {
-            padding: 12px 16px;
-            font-size: 14px;
-            border-bottom: 1px solid #f3f4f6;
-        }
-
-        tr:hover {
-            background: #f9fafb;
-        }
-
-        .badge {
-            display: inline-block;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 11px;
-            font-weight: 600;
-            text-transform: uppercase;
-        }
-
-        .badge.high {
-            background: #d1fae5;
-            color: #065f46;
-        }
-
-        .badge.medium {
-            background: #fef3c7;
-            color: #92400e;
-        }
-
-        .badge.low {
-            background: #fee2e2;
-            color: #991b1b;
-        }
-
-        .alert-box {
-            background: linear-gradient(135deg, #fef3c7 0%, #fee2e2 100%);
-            border: 1px solid #fbbf24;
-            border-radius: 12px;
-            padding: 20px;
-            margin-top: 20px;
-        }
-
-        .alert-title {
-            font-size: 16px;
-            font-weight: 700;
-            color: #92400e;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .alert-item {
-            background: white;
-            border: 1px solid #fbbf24;
-            border-radius: 8px;
-            padding: 12px;
             margin-bottom: 8px;
         }
 
-        .alert-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .alert-item-title {
-            font-weight: 600;
-            font-size: 14px;
-            margin-bottom: 4px;
-        }
-
-        .alert-item-desc {
-            font-size: 12px;
-            color: #6b7280;
-        }
-
-        .insight-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 16px;
-            margin-bottom: 24px;
-        }
-
-        .insight-card {
-            border-radius: 12px;
-            padding: 20px;
-            border: 1px solid;
-        }
-
-        .insight-card.blue {
-            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
-            border-color: #93c5fd;
-        }
-
-        .insight-card.purple {
-            background: linear-gradient(135deg, #ede9fe 0%, #ddd6fe 100%);
-            border-color: #c4b5fd;
-        }
-
-        .insight-card.pink {
-            background: linear-gradient(135deg, #fce7f3 0%, #fbcfe8 100%);
-            border-color: #f9a8d4;
-        }
-
-        .insight-icon {
-            font-size: 32px;
-            margin-bottom: 12px;
-        }
-
-        .insight-label {
+        .insight-box p {
             font-size: 13px;
-            font-weight: 500;
-            color: #374151;
-            margin-bottom: 4px;
-        }
-
-        .insight-value {
-            font-size: 24px;
-            font-weight: 700;
-            color: #1f2937;
-            margin-bottom: 4px;
-        }
-
-        .insight-desc {
-            font-size: 13px;
-            color: #6b7280;
-        }
-
-        .stock-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 16px;
-            margin-bottom: 24px;
-        }
-
-        .stock-card {
-            border-radius: 12px;
-            padding: 20px;
-            border: 1px solid;
-        }
-
-        .stock-card.green {
-            background: #f0fdf4;
-            border-color: #86efac;
-        }
-
-        .stock-card.yellow {
-            background: #fefce8;
-            border-color: #fde047;
-        }
-
-        .stock-card.red {
-            background: #fef2f2;
-            border-color: #fca5a5;
-        }
-
-        .stock-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 8px;
-        }
-
-        .stock-label {
-            font-size: 14px;
-            font-weight: 500;
-        }
-
-        .stock-icon {
-            font-size: 24px;
-        }
-
-        .stock-value {
-            font-size: 36px;
-            font-weight: 700;
-            margin-bottom: 4px;
-        }
-
-        .stock-desc {
-            font-size: 13px;
-            color: #6b7280;
+            color: #666;
+            line-height: 1.6;
         }
 
         .recommendations {
             background: white;
-            border-radius: 12px;
-            padding: 24px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-            border: 1px solid #e5e7eb;
-            margin-top: 24px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            grid-column: span 12;
         }
 
-        .rec-title {
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 16px;
+        .recommendations h2 {
+            color: #667eea;
+            margin-bottom: 15px;
         }
 
-        .rec-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 16px;
+        .recommendations ul {
+            list-style: none;
+            padding: 0;
         }
 
-        .rec-item {
-            display: flex;
-            gap: 12px;
-        }
-
-        .rec-number {
-            width: 32px;
-            height: 32px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            flex-shrink: 0;
-        }
-
-        .rec-item:nth-child(1) .rec-number { background: #dbeafe; color: #2563eb; }
-        .rec-item:nth-child(2) .rec-number { background: #ede9fe; color: #7c3aed; }
-        .rec-item:nth-child(3) .rec-number { background: #fce7f3; color: #ec4899; }
-        .rec-item:nth-child(4) .rec-number { background: #d1fae5; color: #10b981; }
-
-        .rec-content h4 {
+        .recommendations li {
+            padding: 12px;
+            margin-bottom: 8px;
+            background: #f8f9ff;
+            border-radius: 6px;
+            border-left: 4px solid #667eea;
             font-size: 14px;
-            font-weight: 600;
-            margin-bottom: 4px;
+            color: #666;
         }
 
-        .rec-content p {
-            font-size: 12px;
-            color: #6b7280;
-        }
-
-        .footer {
-            text-align: center;
-            padding: 24px;
-            color: #6b7280;
-            font-size: 13px;
-        }
-
-        .footer p {
-            margin: 4px 0;
-        }
-
-        @media (max-width: 768px) {
-            .header h1 { font-size: 22px; }
-            .chart-grid { grid-template-columns: 1fr; }
-            .kpi-grid { grid-template-columns: 1fr; }
-            .nav-container { overflow-x: auto; }
+        @media (max-width: 1024px) {
+            .half-width, .third-width, .two-third {
+                grid-column: span 12;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <div class="header">
-        <h1>Sales Performance Analytics Dashboard</h1>
-        <p>Data-Driven Analysis of Sales Trends, Customer Profiles, and Product Inventory</p>
-        <div class="header-stats">
-            <span class="header-badge">Period: 2021-2023</span>
-            <span class="header-badge">10,000 Transactions</span>
-            <span class="header-badge">900 Customers</span>
-        </div>
-    </div>
-
-    <!-- Navigation Tabs -->
-    <div class="nav-tabs">
-        <div class="nav-container">
-            <button class="tab-btn active" onclick="switchTab('overview')">Overview</button>
-            <button class="tab-btn" onclick="switchTab('products')">Products</button>
-            <button class="tab-btn" onclick="switchTab('customers')">Customers</button>
-            <button class="tab-btn" onclick="switchTab('inventory')">Inventory</button>
-        </div>
-    </div>
-
     <div class="container">
-        <!-- Overview Tab -->
-        <div id="overview" class="tab-content active">
-            <!-- KPI Cards -->
-            <div class="kpi-grid">
-                <div class="kpi-card blue">
-                    <div class="kpi-icon">💰</div>
-                    <div class="kpi-label">Total Revenue</div>
-                    <div class="kpi-value">Rp 1.85M</div>
-                    <div class="kpi-subtitle">All-time revenue</div>
-                    <div class="kpi-trend">↗ +12.5% vs last period</div>
-                </div>
-                <div class="kpi-card purple">
-                    <div class="kpi-icon">🛒</div>
-                    <div class="kpi-label">Total Transactions</div>
-                    <div class="kpi-value">10,000</div>
-                    <div class="kpi-subtitle">Completed orders</div>
-                    <div class="kpi-trend">↗ +8.3% vs last period</div>
-                </div>
-                <div class="kpi-card pink">
-                    <div class="kpi-icon">👥</div>
-                    <div class="kpi-label">Active Customers</div>
-                    <div class="kpi-value">900</div>
-                    <div class="kpi-subtitle">Unique customers</div>
-                    <div class="kpi-trend">↗ +15.2% vs last period</div>
-                </div>
-                <div class="kpi-card green">
-                    <div class="kpi-icon">📦</div>
-                    <div class="kpi-label">Products Sold</div>
-                    <div class="kpi-value">18,500</div>
-                    <div class="kpi-subtitle">Total units</div>
-                    <div class="kpi-trend">↗ +10.8% vs last period</div>
-                </div>
+        <!-- Header -->
+        <div class="header">
+            <h1>📊 Sales Performance Analytics Dashboard</h1>
+            <p>Data-Driven Analysis of Sales Trends, Customer Profiles, and Product Inventory (2014-2023)</p>
+            <p style="margin-top: 5px;"><strong>Analyst:</strong> Diki Darmawan | <strong>Institution:</strong> Universitas Lampung</p>
+        </div>
+
+        <!-- KPI Cards -->
+        <div class="kpi-grid">
+            <div class="kpi-card">
+                <h3>Total Revenue</h3>
+                <div class="value">Rp 1.29M</div>
+                <div class="subtext">From 10,000 transactions</div>
             </div>
-
-            <!-- Sales Trend -->
-            <div class="chart-card full-width">
-                <h3 class="chart-title"><span class="chart-icon">📈</span> Monthly Sales Trend</h3>
-                <canvas id="salesTrendChart" height="80"></canvas>
+            <div class="kpi-card">
+                <h3>Products</h3>
+                <div class="value">10</div>
+                <div class="subtext">Active SKUs</div>
             </div>
-
-            <!-- Location Performance -->
-            <div class="chart-grid">
-                <div class="chart-card">
-                    <h3 class="chart-title"><span class="chart-icon">📍</span> Top Cities by Revenue</h3>
-                    <div class="location-list">
-                        <div class="location-item">
-                            <div class="location-name">Jakarta</div>
-                            <div class="location-bar-container">
-                                <div class="location-bar" style="width: 28%;">28%</div>
-                            </div>
-                            <div class="location-value">Rp 485K</div>
-                        </div>
-                        <div class="location-item">
-                            <div class="location-name">Bandung</div>
-                            <div class="location-bar-container">
-                                <div class="location-bar" style="width: 23%;">23%</div>
-                            </div>
-                            <div class="location-value">Rp 398K</div>
-                        </div>
-                        <div class="location-item">
-                            <div class="location-name">Surabaya</div>
-                            <div class="location-bar-container">
-                                <div class="location-bar" style="width: 20%;">20%</div>
-                            </div>
-                            <div class="location-value">Rp 356K</div>
-                        </div>
-                        <div class="location-item">
-                            <div class="location-name">Medan</div>
-                            <div class="location-bar-container">
-                                <div class="location-bar" style="width: 16%;">16%</div>
-                            </div>
-                            <div class="location-value">Rp 285K</div>
-                        </div>
-                        <div class="location-item">
-                            <div class="location-name">Bali</div>
-                            <div class="location-bar-container">
-                                <div class="location-bar" style="width: 8%;">8%</div>
-                            </div>
-                            <div class="location-value">Rp 142K</div>
-                        </div>
-                        <div class="location-item">
-                            <div class="location-name">Others</div>
-                            <div class="location-bar-container">
-                                <div class="location-bar" style="width: 5%;">5%</div>
-                            </div>
-                            <div class="location-value">Rp 89K</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="chart-card">
-                    <h3 class="chart-title"><span class="chart-icon">🥧</span> Revenue Distribution</h3>
-                    <canvas id="locationPieChart"></canvas>
-                </div>
+            <div class="kpi-card">
+                <h3>Customers</h3>
+                <div class="value">900</div>
+                <div class="subtext">Unique buyers</div>
+            </div>
+            <div class="kpi-card">
+                <h3>Locations</h3>
+                <div class="value">10</div>
+                <div class="subtext">Cities covered</div>
+            </div>
+            <div class="kpi-card">
+                <h3>Avg Transaction</h3>
+                <div class="value">Rp 129K</div>
+                <div class="subtext">Per order</div>
             </div>
         </div>
 
-        <!-- Products Tab -->
-        <div id="products" class="tab-content">
-            <div class="chart-grid">
-                <div class="chart-card">
-                    <h3 class="chart-title"><span class="chart-icon">📊</span> Top Selling Products (Quantity)</h3>
-                    <canvas id="productQuantityChart"></canvas>
-                </div>
-                <div class="chart-card">
-                    <h3 class="chart-title"><span class="chart-icon">💵</span> Top Revenue Products</h3>
-                    <canvas id="productRevenueChart"></canvas>
-                </div>
-            </div>
-
-            <div class="chart-card full-width">
-                <h3 class="chart-title"><span class="chart-icon">📋</span> Product Performance Overview</h3>
-                <div class="table-container">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Rank</th>
-                                <th>Product</th>
-                                <th class="text-right">Units Sold</th>
-                                <th class="text-right">Revenue</th>
-                                <th class="text-right">Avg Price</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>#1</strong></td>
-                                <td>Sweater</td>
-                                <td class="text-right">2,150</td>
-                                <td class="text-right"><strong>Rp 197,800</strong></td>
-                                <td class="text-right">Rp 92</td>
-                            </tr>
-                            <tr>
-                                <td><strong>#2</strong></td>
-                                <td>Jaket</td>
-                                <td class="text-right">1,980</td>
-                                <td class="text-right"><strong>Rp 114,840</strong></td>
-                                <td class="text-right">Rp 58</td>
-                            </tr>
-                            <tr>
-                                <td><strong>#3</strong></td>
-                                <td>Kaos</td>
-                                <td class="text-right">1,850</td>
-                                <td class="text-right"><strong>Rp 144,300</strong></td>
-                                <td class="text-right">Rp 78</td>
-                            </tr>
-                            <tr>
-                                <td><strong>#4</strong></td>
-                                <td>Celana Jeans</td>
-                                <td class="text-right">1,620</td>
-                                <td class="text-right"><strong>Rp 147,420</strong></td>
-                                <td class="text-right">Rp 91</td>
-                            </tr>
-                            <tr>
-                                <td><strong>#5</strong></td>
-                                <td>Sarung Tangan</td>
-                                <td class="text-right">1,480</td>
-                                <td class="text-right"><strong>Rp 84,360</strong></td>
-                                <td class="text-right">Rp 57</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-
-        <!-- Customers Tab -->
-        <div id="customers" class="tab-content">
-            <div class="chart-grid">
-                <div class="chart-card">
-                    <h3 class="chart-title"><span class="chart-icon">👤</span> Customer Age Distribution</h3>
-                    <canvas id="ageChart"></canvas>
-                </div>
-                <div class="chart-card">
-                    <h3 class="chart-title"><span class="chart-icon">⚧</span> Gender Distribution</h3>
-                    <canvas id="genderChart"></canvas>
+        <!-- Main Dashboard Grid -->
+        <div class="dashboard-grid">
+            <!-- Yearly Sales Trend -->
+            <div class="chart-card two-third">
+                <h2>📈 Yearly Sales Trend (2014-2023)</h2>
+                <canvas id="yearlyTrendChart"></canvas>
+                <div class="insight-box">
+                    <h4>Key Insight:</h4>
+                    <p>Sales remained stable between 2014-2022 (averaging ~140K annually), but experienced a dramatic decline in 2023 dropping to just 18K. This 87% decrease requires immediate investigation into market conditions, competition, or operational issues.</p>
                 </div>
             </div>
 
-            <div class="insight-grid">
-                <div class="insight-card blue">
-                    <div class="insight-icon">👥</div>
-                    <div class="insight-label">Largest Segment</div>
-                    <div class="insight-value">18-25 Years</div>
-                    <div class="insight-desc">32% of total customers</div>
+            <!-- Top City Revenue Pie -->
+            <div class="chart-card third-width">
+                <h2>🌍 Top Cities by Revenue</h2>
+                <canvas id="cityPieChart"></canvas>
+                <div class="insight-box">
+                    <h4>Geographic Distribution:</h4>
+                    <p>Revenue is evenly distributed across top 5 cities (20-21% each): Semarang, Makassar, Medan, Bali, and Palembang represent 100% of analyzed revenue.</p>
                 </div>
-                <div class="insight-card purple">
-                    <div class="insight-icon">📍</div>
-                    <div class="insight-label">Top Location</div>
-                    <div class="insight-value">Jakarta</div>
-                    <div class="insight-desc">28% of total revenue</div>
+            </div>
+
+            <!-- Location Bar Chart -->
+            <div class="chart-card half-width">
+                <h2>📍 Sales by Location</h2>
+                <canvas id="locationChart"></canvas>
+                <div class="insight-box">
+                    <h4>Market Concentration:</h4>
+                    <p>Semarang leads with 152K in sales, followed closely by Makassar (149K) and Medan (139K). Yogyakarta shows lowest performance at 106K, indicating potential for targeted marketing.</p>
                 </div>
-                <div class="insight-card pink">
-                    <div class="insight-icon">📊</div>
-                    <div class="insight-label">Gender Balance</div>
-                    <div class="insight-value">52% / 48%</div>
-                    <div class="insight-desc">Male to Female ratio</div>
+            </div>
+
+            <!-- Customer Demographics -->
+            <div class="chart-card half-width">
+                <h2>👥 Customer Demographics by Age & Gender</h2>
+                <canvas id="demographicsChart"></canvas>
+                <div class="insight-box">
+                    <h4>Target Audience:</h4>
+                    <p>Peak purchasing occurs in 30-60 age groups. Women aged 60 generate highest revenue (146K), followed by men aged 60 (124K). The 10-age segment shows minimal activity, suggesting products appeal to mature audiences.</p>
                 </div>
+            </div>
+
+            <!-- Top Products by Revenue -->
+            <div class="chart-card half-width">
+                <h2>💰 Top Products by Revenue</h2>
+                <canvas id="revenueProductChart"></canvas>
+                <div class="insight-box">
+                    <h4>Revenue Drivers:</h4>
+                    <p>Sweater dominates with 238K revenue, followed by Celana Jeans (219K). Despite high revenue, products like Tas (37K) and Topi (30K) underperform, suggesting need for promotional strategies or discontinuation.</p>
+                </div>
+            </div>
+
+            <!-- Best Sellers by Quantity -->
+            <div class="chart-card half-width">
+                <h2>🏆 Top 5 Best-Seller Products (Quantity)</h2>
+                <canvas id="bestSellerChart"></canvas>
+                <div class="insight-box">
+                    <h4>Volume Leaders:</h4>
+                    <p>Sweater leads in units sold (238K), followed by Celana Jeans (219K) and Kaos (192K). High-volume products align with revenue leaders, indicating price-demand equilibrium.</p>
+                </div>
+            </div>
+
+            <!-- Product Stock Levels -->
+            <div class="chart-card two-third">
+                <h2>📦 Product Stock Levels</h2>
+                <canvas id="stockChart"></canvas>
+                <div class="insight-box">
+                    <h4>Inventory Imbalance:</h4>
+                    <p>Critical stock shortage on Scarf (53 units) requires immediate restocking. Jaket and Topi are overstocked (182 units each) relative to demand. Recommend rebalancing inventory allocation to prevent stockouts and reduce holding costs.</p>
+                </div>
+            </div>
+
+            <!-- Top 5 Stock -->
+            <div class="chart-card third-width">
+                <h2>📊 Top 5 Stock Levels</h2>
+                <canvas id="topStockChart"></canvas>
+                <div class="insight-box">
+                    <h4>Stock Leaders:</h4>
+                    <p>Jaket and Topi maintain highest stock (182 units), while Tas (172) and Kaos (175) show balanced levels. Sarung Tangan at 176 units appears well-stocked.</p>
+                </div>
+            </div>
+
+            <!-- Recommendations Section -->
+            <div class="recommendations">
+                <h2>🎯 Strategic Recommendations</h2>
+                <ul>
+                    <li><strong>Urgent: Investigate 2023 Decline</strong> - The 87% revenue drop in 2023 requires immediate root cause analysis. Examine external factors (economic conditions, competition) and internal operations (supply chain, marketing effectiveness).</li>
+                    <li><strong>Restock High-Demand Items</strong> - Immediately replenish Scarf inventory (currently 53 units). Monitor Sweater and Celana Jeans stock levels closely given their high sales volume.</li>
+                    <li><strong>Optimize Inventory Mix</strong> - Reduce overstock on Jaket and Topi (182 units each) through promotional pricing or bundle offers. Redirect capital to fast-moving products.</li>
+                    <li><strong>Strengthen Regional Marketing</strong> - Prioritize advertising budgets in top-performing cities (Semarang, Makassar, Medan). Investigate growth opportunities in underperforming markets like Yogyakarta and Surabaya.</li>
+                    <li><strong>Targeted Demographic Campaigns</strong> - Focus marketing on 30-60 age demographic, particularly women aged 50-60 who show highest purchasing power. Develop age-appropriate messaging and product placement.</li>
+                    <li><strong>Product Portfolio Review</strong> - Evaluate low-performers (Tas, Topi) for pricing adjustments or discontinuation. Consider introducing complementary products that appeal to core demographic.</li>
+                    <li><strong>Seasonal Promotion Strategy</strong> - Implement strategic discounts during historically low-sales periods to smooth revenue fluctuations and improve cash flow consistency.</li>
+                    <li><strong>Bundle Strategy</strong> - Create product bundles combining high-margin items (Sweater, Celana Jeans) with slow-movers (Tas, Topi) to increase average transaction value and clear excess inventory.</li>
+                </ul>
             </div>
         </div>
-
-        <!-- Inventory Tab -->
-        <div id="inventory" class="tab-content">
-            <div class="stock-grid">
-                <div class="stock-card green">
-                    <div class="stock-header">
-                        <h4 class="stock-label">High Stock</h4>
-                        <div class="stock-icon">📦</div>
-                    </div>
-                    <div class="stock-value">3</div>
-                    <div class="stock-desc">Products above 150 units</div>
-                </div>
-                <div class="stock-card yellow">
-                    <div class="stock-header">
-                        <h4 class="stock-label">Medium Stock</h4>
-                        <div class="stock-icon">📦</div>
-                    </div>
-                    <div class="stock-value">3</div>
-                    <div class="stock-desc">Products 75-150 units</div>
-                </div>
-                <div class="stock-card red">
-                    <div class="stock-header">
-                        <h4 class="stock-label">Low Stock</h4>
-                        <div class="stock-icon">⚠️</div>
-                    </div>
-                    <div class="stock-value">2</div>
-                    <div class="stock-desc">Products below 75 units</div>
-                </div>
-            </div>
-
-            <div class="chart-card full-width">
-                <h3 class="chart-title"><span class="chart-icon">📊</span> Current Stock Levels</h3>
-                <canvas id="stockChart" height="100"></canvas>
-            </div>
-
-            <div class="chart-card full-width">
-                <h3 class="chart-title"><span class="chart-icon">📋</span> Inventory Details</h3>
-                <div class="table-container">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Product</th>
-                                <th class="text-right">Current Stock</th>
-                                <th class="text-right">Status</th>
-                                <th>Action Required</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>Jaket</strong></td>
-                                <td class="text-right">182 pcs</td>
-                                <td class="text-right"><span class="badge high">HIGH</span></td>
-                                <td>Well Stocked</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Kaos</strong></td>
-                                <td class="text-right">175 pcs</td>
-                                <td class="text-right"><span class="badge high">HIGH</span></td>
-                                <td>Well Stocked</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Sarung Tangan</strong></td>
-                                <td class="text-right">176 pcs</td>
-                                <td class="text-right"><span class="badge high">HIGH</span></td>
-                                <td>Well Stocked</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Sweater</strong></td>
-                                <td class="text-right">165 pcs</td>
-                                <td class="text-right"><span class="badge medium">MEDIUM</span></td>
-                                <td>Monitor Closely</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Celana Jeans</strong></td>
-                                <td class="text-right">79 pcs</td>
-                                <td class="text-right"><span class="badge medium">MEDIUM</span></td>
-                                <td>Monitor Closely</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Sepatu Olahraga</strong></td>
-                                <td class="text-right">75 pcs</td>
-                                <td class="text-right"><span class="badge medium">MEDIUM</span></td>
-                                <td>Monitor Closely</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Scarf</strong></td>
-                                <td class="text-right">53 pcs</td>
-                                <td class="text-right"><span class="badge low">LOW</span></td>
-                                <td><strong style="color: #dc2626;">⚠️ Restock Immediately</strong></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Topi</strong></td>
-                                <td class="text-right">45 pcs</td>
-                                <td class="text-right"><span class="badge low">LOW</span></td>
-                                <td><strong style="color: #dc2626;">⚠️ Restock Immediately</strong></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <div class="alert-box">
-                <h3 class="alert-title">⚠️ Urgent Stock Alerts</h3>
-                <div class="alert-item">
-                    <div class="alert-item-title">⚠️ Scarf and Topi are critically low</div>
-                    <div class="alert-item-desc">Recommend immediate restocking to prevent stockouts</div>
-                </div>
-                <div class="alert-item">
-                    <div class="alert-item-title">📊 Jaket, Kaos, and Sarung Tangan are overstocked</div>
-                    <div class="alert-item-desc">Consider promotional campaigns to optimize inventory</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Recommendations -->
-        <div class="recommendations">
-            <h3 class="rec-title">Key Recommendations</h3>
-            <div class="rec-grid">
-                <div class="rec-item">
-                    <div class="rec-number">1</div>
-                    <div class="rec-content">
-                        <h4>Optimize Inventory</h4>
-                        <p>Restock low-demand items and reduce overstock</p>
-                    </div>
-                </div>
-                <div class="rec-item">
-                    <div class="rec-number">2</div>
-                    <div class="rec-content">
-                        <h4>Target High-Value Cities</h4>
-                        <p>Focus marketing on Jakarta and Bandung</p>
-                    </div>
-                </div>
-                <div class="rec-item">
-                    <div class="rec-number">3</div>
-                    <div class="rec-content">
-                        <h4>Seasonal Promotions</h4>
-                        <p>Run campaigns during low-sales months</p>
-                    </div>
-                </div>
-                <div class="rec-item">
-                    <div class="rec-number">4</div>
-                    <div class="rec-content">
-                        <h4>Customer Targeting</h4>
-                        <p>Focus on 18-35 age group for maximum impact</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <div class="footer">
-        <p><strong>Data Mining Project</strong> | Diki Darmawan (2255061006)</p>
-        <p>Universitas Lampung - Teknik Informatika</p>
     </div>
 
     <script>
-        // Tab Switching
-        function switchTab(tabName) {
-            const tabs = document.querySelectorAll('.tab-content');
-            const buttons = document.querySelectorAll('.tab-btn');
-            
-            tabs.forEach(tab => tab.classList.remove('active'));
-            buttons.forEach(btn => btn.classList.remove('active'));
-            
-            document.getElementById(tabName).classList.add('active');
-            event.target.classList.add('active');
-        }
+        // Chart Configuration
+        const chartColors = {
+            primary: '#667eea',
+            secondary: '#764ba2',
+            success: '#48bb78',
+            warning: '#ed8936',
+            danger: '#f56565',
+            info: '#4299e1',
+            purple: '#9f7aea',
+            pink: '#ed64a6',
+            teal: '#38b2ac',
+            orange: '#ed8936'
+        };
 
-        // Chart.js Default Configuration
-        Chart.defaults.font.family = '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
-        Chart.defaults.color = '#6b7280';
+        const baseOptions = {
+            responsive: true,
+            maintainAspectRatio: true,
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'bottom'
+                }
+            }
+        };
 
-        // Sales Trend Chart
-        const salesTrendCtx = document.getElementById('salesTrendChart').getContext('2d');
-        new Chart(salesTrendCtx, {
+        // Yearly Sales Trend
+        new Chart(document.getElementById('yearlyTrendChart'), {
             type: 'line',
             data: {
-                labels: ['Jan 21', 'Feb 21', 'Mar 21', 'Apr 21', 'May 21', 'Jun 21', 'Jul 21', 'Aug 21', 'Sep 21', 'Oct 21', 'Nov 21', 'Dec 21'],
+                labels: ['2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023'],
                 datasets: [{
-                    label: 'Revenue (Rp 000)',
-                    data: [125, 132, 148, 138, 156, 165, 142, 158, 172, 168, 185, 198],
-                    borderColor: '#2563eb',
-                    backgroundColor: 'rgba(37, 99, 235, 0.1)',
+                    label: 'Revenue (K)',
+                    data: [140, 142, 144, 145, 138, 140, 141, 144, 136, 18],
+                    borderColor: chartColors.primary,
+                    backgroundColor: 'rgba(102, 126, 234, 0.1)',
                     tension: 0.4,
                     fill: true,
-                    borderWidth: 3
+                    pointRadius: 5,
+                    pointHoverRadius: 7
+                }]
+            },
+            options: {
+                ...baseOptions,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Revenue (thousands)'
+                        }
+                    }
+                }
+            }
+        });
+
+        // Top City Pie Chart
+        new Chart(document.getElementById('cityPieChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Bali', 'Makassar', 'Medan', 'Palembang', 'Semarang'],
+                datasets: [{
+                    data: [20, 21, 20, 18, 21],
+                    backgroundColor: [
+                        chartColors.primary,
+                        chartColors.info,
+                        chartColors.warning,
+                        chartColors.purple,
+                        chartColors.pink
+                    ]
+                }]
+            },
+            options: {
+                ...baseOptions,
+                plugins: {
+                    legend: {
+                        position: 'right'
+                    }
+                }
+            }
+        });
+
+        // Location Bar Chart
+        new Chart(document.getElementById('locationChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Semarang', 'Makassar', 'Medan', 'Bali', 'Palembang', 'Manado', 'Jakarta', 'Bandung', 'Surabaya', 'Yogyakarta'],
+                datasets: [{
+                    label: 'Sales (K)',
+                    data: [152, 149, 139, 139, 131, 129, 117, 116, 109, 106],
+                    backgroundColor: chartColors.primary
+                }]
+            },
+            options: {
+                ...baseOptions,
+                indexAxis: 'y',
+                scales: {
+                    x: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Customer Demographics
+        new Chart(document.getElementById('demographicsChart'), {
+            type: 'bar',
+            data: {
+                labels: ['10', '20', '30', '40', '50', '60'],
+                datasets: [{
+                    label: 'Men (Pria)',
+                    data: [30, 94, 130, 130, 130, 124],
+                    backgroundColor: chartColors.primary
                 }, {
-                    label: 'Transactions',
-                    data: [850, 920, 1050, 980, 1120, 1200, 1010, 1150, 1280, 1220, 1350, 1450],
-                    borderColor: '#7c3aed',
-                    backgroundColor: 'rgba(124, 58, 237, 0.1)',
-                    tension: 0.4,
-                    fill: true,
-                    borderWidth: 2
+                    label: 'Women (Wanita)',
+                    data: [12, 119, 140, 108, 124, 146],
+                    backgroundColor: chartColors.pink
                 }]
             },
             options: {
-                responsive: true,
-                maintainAspectRatio: true,
-                plugins: {
-                    legend: { display: true, position: 'top' }
-                },
+                ...baseOptions,
                 scales: {
-                    y: { beginAtZero: true, grid: { color: '#f3f4f6' } },
-                    x: { grid: { display: false } }
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Revenue (K)'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Age Group'
+                        }
+                    }
                 }
             }
         });
 
-        // Location Pie Chart
-        const locationPieCtx = document.getElementById('locationPieChart').getContext('2d');
-        new Chart(locationPieCtx, {
-            type: 'doughnut',
-            data: {
-                labels: ['Jakarta', 'Bandung', 'Surabaya', 'Medan', 'Bali', 'Others'],
-                datasets: [{
-                    data: [28, 23, 20, 16, 8, 5],
-                    backgroundColor: ['#2563eb', '#7c3aed', '#ec4899', '#f59e0b', '#10b981', '#6366f1'],
-                    borderWidth: 0
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: true,
-                plugins: {
-                    legend: { display: true, position: 'bottom' }
-                }
-            }
-        });
-
-        // Product Quantity Chart
-        const productQuantityCtx = document.getElementById('productQuantityChart').getContext('2d');
-        new Chart(productQuantityCtx, {
+        // Top Products by Revenue
+        new Chart(document.getElementById('revenueProductChart'), {
             type: 'bar',
             data: {
-                labels: ['Sweater', 'Jaket', 'Kaos', 'Celana Jeans', 'Sarung Tangan'],
+                labels: ['Sweater', 'Celana Jeans', 'Kaos', 'Kacamata', 'Jaket', 'Sarung Tangan', 'Sepatu Olahraga', 'Scarf', 'Tas', 'Topi'],
                 datasets: [{
-                    label: 'Units Sold',
-                    data: [2150, 1980, 1850, 1620, 1480],
-                    backgroundColor: '#2563eb',
-                    borderRadius: 8
+                    label: 'Revenue (K)',
+                    data: [238, 219, 192, 176, 146, 140, 64, 45, 37, 30],
+                    backgroundColor: [
+                        chartColors.primary,
+                        chartColors.secondary,
+                        chartColors.info,
+                        chartColors.success,
+                        chartColors.warning,
+                        chartColors.purple,
+                        chartColors.pink,
+                        chartColors.teal,
+                        chartColors.orange,
+                        chartColors.danger
+                    ]
                 }]
             },
             options: {
-                indexAxis: 'y',
-                responsive: true,
-                maintainAspectRatio: true,
-                plugins: { legend: { display: false } },
-                scales: {
-                    x: { beginAtZero: true, grid: { color: '#f3f4f6' } },
-                    y: { grid: { display: false } }
-                }
+                ...baseOptions,
+                indexAxis: 'y'
             }
         });
 
-        // Product Revenue Chart
-        const productRevenueCtx = document.getElementById('productRevenueChart').getContext('2d');
-        new Chart(productRevenueCtx, {
+        // Best Sellers
+        new Chart(document.getElementById('bestSellerChart'), {
             type: 'bar',
             data: {
-                labels: ['Sweater', 'Celana Jeans', 'Kaos', 'Jaket', 'Sarung Tangan'],
+                labels: ['Sweater', 'Celana Jeans', 'Kaos', 'Kacamata', 'Jaket'],
                 datasets: [{
-                    label: 'Revenue (Rp 000)',
-                    data: [197.8, 147.4, 144.3, 114.8, 84.4],
-                    backgroundColor: '#7c3aed',
-                    borderRadius: 8
+                    label: 'Units Sold (K)',
+                    data: [238, 219, 192, 176, 146],
+                    backgroundColor: chartColors.success
                 }]
             },
             options: {
-                indexAxis: 'y',
-                responsive: true,
-                maintainAspectRatio: true,
-                plugins: { legend: { display: false } },
-                scales: {
-                    x: { beginAtZero: true, grid: { color: '#f3f4f6' } },
-                    y: { grid: { display: false } }
-                }
+                ...baseOptions,
+                indexAxis: 'y'
             }
         });
 
-        // Age Distribution Chart
-        const ageCtx = document.getElementById('ageChart').getContext('2d');
-        new Chart(ageCtx, {
+        // Product Stock Levels
+        new Chart(document.getElementById('stockChart'), {
             type: 'bar',
             data: {
-                labels: ['18-25', '26-35', '36-45', '46-55', '56+'],
+                labels: ['Celana Jeans', 'Jaket', 'Kacamata', 'Kaos', 'Sarung Tangan', 'Scarf', 'Sepatu Olahraga', 'Sweater', 'Tas', 'Topi'],
                 datasets: [{
-                    label: 'Customers',
-                    data: [2850, 2450, 1980, 1120, 600],
-                    backgroundColor: '#2563eb',
-                    borderRadius: 8
+                    label: 'Stock Level',
+                    data: [79, 182, 71, 175, 176, 53, 75, 165, 172, 182],
+                    backgroundColor: function(context) {
+                        const value = context.parsed.y;
+                        if (value < 70) return chartColors.danger;
+                        if (value > 170) return chartColors.warning;
+                        return chartColors.success;
+                    }
                 }]
             },
             options: {
-                responsive: true,
-                maintainAspectRatio: true,
-                plugins: { legend: { display: false } },
+                ...baseOptions,
                 scales: {
-                    y: { beginAtZero: true, grid: { color: '#f3f4f6' } },
-                    x: { grid: { display: false } }
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Units in Stock'
+                        }
+                    }
                 }
             }
         });
 
-        // Gender Chart
-        const genderCtx = document.getElementById('genderChart').getContext('2d');
-        new Chart(genderCtx, {
-            type: 'doughnut',
-            data: {
-                labels: ['Pria', 'Wanita'],
-                datasets: [{
-                    data: [5200, 4800],
-                    backgroundColor: ['#2563eb', '#ec4899'],
-                    borderWidth: 0
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: true,
-                plugins: {
-                    legend: { display: true, position: 'bottom' }
-                }
-            }
-        });
-
-        // Stock Chart
-        const stockCtx = document.getElementById('stockChart').getContext('2d');
-        new Chart(stockCtx, {
+        // Top 5 Stock Levels
+        new Chart(document.getElementById('topStockChart'), {
             type: 'bar',
             data: {
-                labels: ['Jaket', 'Kaos', 'Sarung Tangan', 'Sweater', 'Celana Jeans', 'Sepatu', 'Scarf', 'Topi'],
+                labels: ['Jaket', 'Topi', 'Sarung Tangan', 'Kaos', 'Tas'],
                 datasets: [{
-                    label: 'Stock (pcs)',
-                    data: [182, 175, 176, 165, 79, 75, 53, 45],
-                    backgroundColor: ['#10b981', '#10b981', '#10b981', '#f59e0b', '#f59e0b', '#f59e0b', '#ef4444', '#ef4444'],
-                    borderRadius: 8
+                    label: 'Stock Units',
+                    data: [182, 182, 176, 175, 172],
+                    backgroundColor: chartColors.info
                 }]
             },
             options: {
-                responsive: true,
-                maintainAspectRatio: true,
-                plugins: { legend: { display: false } },
-                scales: {
-                    y: { beginAtZero: true, grid: { color: '#f3f4f6' } },
-                    x: { grid: { display: false } }
-                }
+                ...baseOptions,
+                indexAxis: 'y'
             }
         });
     </script>
